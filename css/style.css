@@ -237,7 +237,6 @@ body {
   position: relative;
 }
 .color-swatch:not(:first-child) {
-  margin-left: clamp(-0.75rem, -3vw, -1rem);
 }
 .color-swatch:nth-child(2) {
   z-index: 20;
@@ -607,9 +606,6 @@ body {
 }
 
 .glightbox-container .gslide {
-  max-width: 70%; /* shrink width */
-  max-height: 70%; /* shrink height */
-  margin: auto; /* center it */
   border-radius: 12px;
   overflow: hidden;
 }
