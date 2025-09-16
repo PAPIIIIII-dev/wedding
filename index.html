@@ -53,7 +53,7 @@
   <body>
     <!-- Navigation Bar -->
     <header
-      class="navbar bg-opacity-95 shadow-lg py-3 fixed w-full top-0 z-50"
+      class="navbar bg-opacity-95 shadow-lg fixed py-3 w-full top-0 z-50"
       style="background-color: #f8e8ea"
     >
       <nav class="container mx-auto flex justify-between items-center px-4">
@@ -67,49 +67,49 @@
           <li>
             <a
               href="#home"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Home</a
             >
           </li>
           <li>
             <a
               href="#gallery"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Gallery</a
             >
           </li>
           <li>
             <a
               href="#story"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Our Story</a
             >
           </li>
           <li>
             <a
               href="#location"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Location</a
             >
           </li>
           <li>
             <a
               href="#dress-code"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Dress Code</a
             >
           </li>
           <li>
             <a
               href="#schedule"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >Schedule</a
             >
           </li>
           <li>
             <a
               href="#rsvp"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal transition-colors duration-300"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
               >RSVP</a
             >
           </li>
@@ -153,7 +153,7 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="hero-section hero-background flex items-center justify-center min-h-screen relative text-white text-center pt-20"
+      class="hero-section scroll-mt-20 hero-background flex items-center justify-center min-h-screen relative text-white text-center pt-20"
     >
       <div
         class="absolute inset-0 bg-black bg-opacity-20 backdrop-brightness-75"
@@ -255,7 +255,7 @@
     </section>
 
     <!-- Welcome Message / Invitation -->
-    <section id="welcome" class="py-20 bg-light-beige text-center">
+    <section id="welcome" class="py-10 bg-light-beige text-center">
       <div class="container mx-auto px-4">
         <h2 class="font-garamond text-4xl mb-6 text-dusty-pink">
           Dear Friends and Family!
@@ -275,7 +275,7 @@
     <!-- Gallery Section with Swiper -->
     <!-- Gallery Section with Flickity -->
     <!-- Gallery Section -->
-    <section id="gallery" class="py-0">
+    <section id="gallery" class="py-0 scroll-mt-20">
       <div id="image-slider" class="splide">
         <div class="splide__track">
           <ul class="splide__list">
@@ -411,7 +411,7 @@
     </section>
 
     <!-- Our Story -->
-    <section id="story" class="py-20 bg-sage-green text-center">
+    <section id="story" class="py-10 bg-sage-green text-center scroll-mt-20">
       <div class="container mx-auto px-4">
         <h2 class="font-garamond text-4xl mb-10 text-light-beige">
           Our Journey
@@ -435,7 +435,7 @@
     </section>
 
     <!-- Location / Venue -->
-    <section id="location" class="py-20 bg-light-beige text-center">
+    <section id="location" class="py-10 bg-light-beige text-center scroll-mt-20">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="text-center mb-16">
           <h2 class="font-garamond text-4xl text-dusty-pink mb-4">Location</h2>
@@ -520,7 +520,7 @@
 
     <section
       id="dress-code"
-      class="py-20 px-4"
+      class="py-10 px-4 scroll-mt-20"
       style="background-color: var(--color-light-beige)"
     >
       <div class="container mx-auto text-center">
@@ -619,7 +619,7 @@
 
     <section
       id="schedule"
-      class="py-20 px-4 relative"
+      class="py-20 px-4 relative scroll-mt-20"
       style="background-color: #f8e8ea"
     >
       <div class="container mx-auto max-w-4xl">
@@ -1126,6 +1126,44 @@
           // Add underline to clicked one
           link.classList.add("underline-active");
         });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section"); // sections need IDs
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      // Function to remove active class
+      function removeActiveClasses() {
+        navLinks.forEach((link) => link.classList.remove("underline-active"));
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              const activeLink = document.querySelector(
+                `.nav-link[href="#${id}"]`
+              );
+
+              if (activeLink) {
+                removeActiveClasses();
+                activeLink.classList.add("underline-active");
+              }
+            }
+          });
+        },
+        {
+          root: null, // viewport
+          rootMargin: "0px",
+          threshold: 0.6, // 60% of section in view
+        }
+      );
+
+      sections.forEach((section) => {
+        observer.observe(section);
       });
     });
   </script>
