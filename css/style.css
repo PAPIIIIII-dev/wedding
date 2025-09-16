@@ -26,8 +26,8 @@
 @layer base {
   :root {
     --color-dusty-pink: #d58a94;
-    --color-old-rose: #c08081;
-    --color-rosegold: #b76e79;
+    --color-old-rose: #f3b6b6;
+    --color-rosegold: #feb1b7;
     --color-sage-green: #06402b;
     --color-muted-dark-green: #a4b792;
     --color-cadmium-green: #2e6417;
@@ -617,4 +617,9 @@ body {
 .glightbox-container .gslide img {
   border-radius: 12px;
   object-fit: contain;
+}
+
+.underline-active {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* Optional: for better spacing */
 }
