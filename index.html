@@ -1,1170 +1,998 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Julie & Ezra - Our Wedding</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julie & Ezra - Our Wedding</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              // Flip: make "sage-green" point to dusty-pink
-              "sage-green": "var(--color-dusty-pink)",
-              "muted-dark-green": "var(--color-old-rose)",
-              "cadmium-green": "var(--color-rosegold)",
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-              // Make pinks point to greens (so you can still use them as accents)
-              "dusty-pink": "var(--color-sage-green)",
-              "old-rose": "var(--color-muted-dark-green)",
-              rosegold: "var(--color-cadmium-green)",
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Flip: make "sage-green" point to dusty-pink
+            "sage-green": "var(--color-dusty-pink)",
+            "muted-dark-green": "var(--color-old-rose)",
+            "cadmium-green": "var(--color-rosegold)",
 
-              // Keep neutrals the same
-              "light-beige": "var(--color-light-beige)",
-              "dark-text": "var(--color-dark-text)",
-              "light-text": "var(--color-light-text)",
-            },
-            fontFamily: {
-              garamond: ["Didot", "serif"],
-              montserrat: ["Montserrat", "sans-serif"],
-            },
+            // Make pinks point to greens (so you can still use them as accents)
+            "dusty-pink": "var(--color-sage-green)",
+            "old-rose": "var(--color-muted-dark-green)",
+            rosegold: "var(--color-cadmium-green)",
+
+            // Keep neutrals the same
+            "light-beige": "var(--color-light-beige)",
+            "dark-text": "var(--color-dark-text)",
+            "light-text": "var(--color-light-text)",
+          },
+          fontFamily: {
+            garamond: ["Didot", "serif"],
+            montserrat: ["Montserrat", "sans-serif"],
           },
         },
-      };
-    </script>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <header
-      class="navbar bg-opacity-95 shadow-lg fixed py-3 w-full top-0 z-50"
-      style="background-color: #f8e8ea"
-    >
-      <nav class="container mx-auto flex justify-between items-center px-4">
-        <!-- Logo -->
-        <a href="#home" class="font-garamond text-3xl text-white tracking-wide"
-          ><img src="./mono.png" width="50"
-        /></a>
+      },
+    };
+  </script>
+</head>
 
-        <!-- Desktop Navigation -->
-        <ul class="hidden md:flex space-x-6 mx-auto">
-          <li>
-            <a
-              href="#home"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Home</a
-            >
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar bg-opacity-95 shadow-lg fixed py-3 w-full top-0 z-50" style="background-color: #f8e8ea">
+    <nav class="container mx-auto flex justify-between items-center px-4">
+      <!-- Logo -->
+      <a href="#home" class="font-garamond text-3xl text-white tracking-wide"><img src="./mono.png" width="50" /></a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-6 mx-auto">
+        <li>
+          <a href="#home" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Home</a>
+        </li>
+        <li>
+          <a href="#gallery" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Gallery</a>
+        </li>
+        <li>
+          <a href="#story" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Our Story</a>
+        </li>
+        <li>
+          <a href="#location" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Location</a>
+        </li>
+        <li>
+          <a href="#dress-code" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Dress Code</a>
+        </li>
+        <li>
+          <a href="#schedule" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Schedule</a>
+        </li>
+        <li>
+          <a href="#rsvp" class="nav-link text-sm text-dusty-pink hover:underline font-normal">RSVP</a>
+        </li>
+      </ul>
+
+      <!-- Details Button & Hamburger -->
+      <div class="flex items-center space-x-4">
+        <a href="#rsvp"
+          class="hidden md:block py-1.5 px-5 border border-dusty-pink rounded-full text-sm text-dusty-pink font-garamond tracking-normal hover:bg-dusty-pink hover:text-white transition-all duration-300">Details</a>
+        <button class="md:hidden text-white text-3xl focus:outline-none" onclick="toggleMobileMenu()">
+          &#9776;
+        </button>
+      </div>
+    </nav>
+  </header>
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+  <!-- Mobile Menu Sidebar -->
+  <div class="mobile-menu" id="mobile-menu">
+    <span class="close-btn" onclick="toggleMobileMenu()">&times;</span>
+    <ul class="w-full">
+      <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+      <li><a href="#gallery" onclick="toggleMobileMenu()">Gallery</a></li>
+      <li><a href="#story" onclick="toggleMobileMenu()">Our Story</a></li>
+      <li><a href="#location" onclick="toggleMobileMenu()">Location</a></li>
+      <li>
+        <a href="#dress-code" onclick="toggleMobileMenu()">Dress Code</a>
+      </li>
+      <li><a href="#schedule" onclick="toggleMobileMenu()">Schedule</a></li>
+      <li><a href="#rsvp" onclick="toggleMobileMenu()">RSVP</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="hero-section scroll-mt-20 hero-background flex items-center justify-center min-h-screen relative text-white text-center pt-20">
+    <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-brightness-75"></div>
+    <div class="relative z-10 flex flex-col items-center">
+      <!-- Countdown Timer -->
+      <div class="flex space-x-4 mb-8">
+        <div class="text-shadow-light">
+          <span id="days" class="hero-countdown-value text-5xl font-garamond text-sage-green">00</span>
+          <span class="hero-countdown-label block text-sm uppercase text-sage-green">Days</span>
+        </div>
+        <span class="hero-countdown-label text-4xl text-shadow-light text-sage-green">:</span>
+        <div class="text-shadow-light">
+          <span id="hours" class="hero-countdown-value text-5xl font-garamond text-sage-green">00</span>
+          <span class="hero-countdown-label block text-sm uppercase text-sage-green">Hours</span>
+        </div>
+        <span class="hero-countdown-label text-4xl text-shadow-light text-sage-green">:</span>
+        <div class="text-shadow-light">
+          <span id="minutes" class="hero-countdown-value text-5xl font-garamond text-sage-green">00</span>
+          <span class="hero-countdown-label block text-sm uppercase text-sage-green">Mins</span>
+        </div>
+        <span class="hero-countdown-label text-4xl text-shadow-light text-sage-green">:</span>
+        <div class="text-shadow-light">
+          <span id="seconds" class="hero-countdown-value text-5xl font-garamond text-sage-green">00</span>
+          <span class="hero-countdown-label block text-sm uppercase text-sage-green">Secs</span>
+        </div>
+      </div>
+
+      <!-- Couple's Names -->
+      <!-- <div class=""> -->
+      <!-- <img src="./mono.png" width="250" /> -->
+      <!-- </div> -->
+      <h1 class="font-garamond text-6xl md:text-8xl text-shadow-md text-sage-green mb-10">
+        Julie & Ezra
+      </h1>
+
+      <!-- Date & Location Card -->
+      <div
+        class="hero-details-card py-4 rounded-xl px-10 flex md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-sage-green">
+        <div class="text-center font-garamond text-sage-green m-1">
+          <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase">
+            Saturday
+          </p>
+          <p class="text-xl md:text-lg sm:text-md xs:text-sm">
+            January 3, 2026
+          </p>
+        </div>
+        <div class="border-l-2 border-sage-green h-22 mx-4"></div>
+        <div class="text-center font-garamond text-sage-green m-1">
+          <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase mt-1">
+            3:00 PM
+          </p>
+          <p class="text-xl md:text-lg sm:text-md xs:text-sm">
+            Cubao Cathedral
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Message / Invitation -->
+  <section id="welcome" class="py-10 bg-light-beige text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="font-garamond text-4xl mb-6 text-dusty-pink">
+        Dear Friends and Family!
+      </h2>
+      <p class="max-w-7xl mx-auto text-lg leading-relaxed text-dusty-pink mb-8">
+        A significant and joyful event will soon take place in our lives - our
+        wedding! We are beyond excited to embark on this journey together and
+        would be truly honored if you could share in the magic of this special
+        day with us.
+      </p>
+      <p class="font-garamond text-2xl text-dusty-pink">Julie & Ezra</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section with Swiper -->
+  <!-- Gallery Section with Flickity -->
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-0 scroll-mt-20">
+    <div id="image-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <a href="./14.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./14.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#gallery"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Gallery</a
-            >
+          <li class="splide__slide">
+            <a href="./1.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./1.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#story"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Our Story</a
-            >
+          <li class="splide__slide">
+            <a href="./2.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./2.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#location"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Location</a
-            >
+          <li class="splide__slide">
+            <a href="./3.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./3.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#dress-code"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Dress Code</a
-            >
+          <li class="splide__slide">
+            <a href="./4.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./4.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#schedule"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >Schedule</a
-            >
+          <li class="splide__slide">
+            <a href="./5.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./5.jpg" />
+            </a>
           </li>
-          <li>
-            <a
-              href="#rsvp"
-              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
-              >RSVP</a
-            >
+          <li class="splide__slide">
+            <a href="./6.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./6.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./7.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./7.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./8.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./8.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./9.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./9.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./10.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./10.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./11.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./11.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./12.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./12.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./13.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./13.jpg" />
+            </a>
           </li>
         </ul>
-
-        <!-- Details Button & Hamburger -->
-        <div class="flex items-center space-x-4">
-          <a
-            href="#rsvp"
-            class="hidden md:block py-1.5 px-5 border border-dusty-pink rounded-full text-sm text-dusty-pink font-garamond tracking-normal hover:bg-dusty-pink hover:text-white transition-all duration-300"
-            >Details</a
-          >
-          <button
-            class="md:hidden text-white text-3xl focus:outline-none"
-            onclick="toggleMobileMenu()"
-          >
-            &#9776;
-          </button>
-        </div>
-      </nav>
-    </header>
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-
-    <!-- Mobile Menu Sidebar -->
-    <div class="mobile-menu" id="mobile-menu">
-      <span class="close-btn" onclick="toggleMobileMenu()">&times;</span>
-      <ul class="w-full">
-        <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
-        <li><a href="#gallery" onclick="toggleMobileMenu()">Gallery</a></li>
-        <li><a href="#story" onclick="toggleMobileMenu()">Our Story</a></li>
-        <li><a href="#location" onclick="toggleMobileMenu()">Location</a></li>
-        <li>
-          <a href="#dress-code" onclick="toggleMobileMenu()">Dress Code</a>
-        </li>
-        <li><a href="#schedule" onclick="toggleMobileMenu()">Schedule</a></li>
-        <li><a href="#rsvp" onclick="toggleMobileMenu()">RSVP</a></li>
-      </ul>
+      </div>
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="hero-section scroll-mt-20 hero-background flex items-center justify-center min-h-screen relative text-white text-center pt-20"
-    >
-      <div
-        class="absolute inset-0 bg-black bg-opacity-20 backdrop-brightness-75"
-      ></div>
-      <div class="relative z-10 flex flex-col items-center">
-        <!-- Countdown Timer -->
-        <div class="flex space-x-4 mb-8">
-          <div class="text-shadow-light">
-            <span
-              id="days"
-              class="hero-countdown-value text-5xl font-garamond text-sage-green"
-              >00</span
-            >
-            <span
-              class="hero-countdown-label block text-sm uppercase text-sage-green"
-              >Days</span
-            >
+  <!-- Our Story -->
+  <section id="story" class="py-10 bg-sage-green text-center scroll-mt-20">
+    <div class="container mx-auto px-4">
+      <h2 class="font-garamond text-4xl mb-10 text-light-beige">
+        Our Journey
+      </h2>
+      <p class="max-w-3xl mx-auto text-lg leading-relaxed text-light-beige mb-8">
+        Our love story began not with a grand gesture, but with a quiet
+        understanding and a shared sense of humor. Over the years, our bond
+        has grown stronger with every shared laugh, every supporting hand, and
+        every dream woven together. This wedding marks not just a day, but the
+        beautiful continuation of a commitment we cherish deeply.
+      </p>
+      <p class="max-w-3xl mx-auto text-xl leading-relaxed text-light-beige italic mt-8 font-garamond">
+        "Love is not finding someone to live with, it's finding someone you
+        can't live without."
+      </p>
+    </div>
+  </section>
+
+  <!-- Location / Venue -->
+  <section id="location" class="py-10 bg-light-beige text-center scroll-mt-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="font-garamond text-4xl text-dusty-pink mb-4">Location</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="text-center">
+          <div class="relative mb-6">
+            <img src="./cubao-cathedral.jpg" alt="Wedding ceremony church"
+              class="w-full h-64 object-cover rounded-lg" />
+            <div
+              class="absolute top-4 left-4 bg-sage-green text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg">
+              <span>♥</span>
+              Ceremony
+            </div>
           </div>
-          <span
-            class="hero-countdown-label text-4xl text-shadow-light text-sage-green"
-            >:</span
-          >
-          <div class="text-shadow-light">
-            <span
-              id="hours"
-              class="hero-countdown-value text-5xl font-garamond text-sage-green"
-              >00</span
-            >
-            <span
-              class="hero-countdown-label block text-sm uppercase text-sage-green"
-              >Hours</span
-            >
+          <h3 class="font-garamond text-2xl mb-4 text-dusty-pink">
+            The Cubao Cathedral
+          </h3>
+          <div class="space-y-3 text-gray-700 mb-6">
+            <div class="flex items-center justify-center gap-3">
+              <span>📍</span>
+              <span class="text-dusty-pink">40 Lantana, Cubao, Quezon City</span>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <span>🕐</span>
+              <span class="text-dusty-pink">2:00 PM</span>
+            </div>
           </div>
-          <span
-            class="hero-countdown-label text-4xl text-shadow-light text-sage-green"
-            >:</span
-          >
-          <div class="text-shadow-light">
-            <span
-              id="minutes"
-              class="hero-countdown-value text-5xl font-garamond text-sage-green"
-              >00</span
-            >
-            <span
-              class="hero-countdown-label block text-sm uppercase text-sage-green"
-              >Mins</span
-            >
-          </div>
-          <span
-            class="hero-countdown-label text-4xl text-shadow-light text-sage-green"
-            >:</span
-          >
-          <div class="text-shadow-light">
-            <span
-              id="seconds"
-              class="hero-countdown-value text-5xl font-garamond text-sage-green"
-              >00</span
-            >
-            <span
-              class="hero-countdown-label block text-sm uppercase text-sage-green"
-              >Secs</span
-            >
-          </div>
+          <a href="https://maps.app.goo.gl/Xuh8FUysyAF5bpAp6"
+            class="inline-block py-3 px-8 bg-dusty-pink hover:bg-old-rose text-white rounded-full font-semibold transition-all duration-300">View
+            Map</a>
         </div>
 
-        <!-- Couple's Names -->
-        <!-- <div class=""> -->
-        <img src="./mono.png" width="250" />
-        <!-- </div> -->
-        <!-- <h1
-          class="font-garamond text-6xl md:text-8xl text-shadow-md text-sage-green mb-10"
-        >
-          Julie & Ezra
-        </h1> -->
-
-        <!-- Date & Location Card -->
-        <div
-          class="hero-details-card py-4 rounded-xl px-10 flex md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-sage-green"
-        >
-          <div class="text-center font-garamond text-sage-green m-1">
-            <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase">
-              Saturday
-            </p>
-            <p class="text-xl md:text-lg sm:text-md xs:text-sm">
-              January 3, 2026
-            </p>
+        <div class="text-center">
+          <div class="relative mb-6">
+            <img src="./cities.jpg" alt="Wedding reception venue" class="w-full h-64 object-cover rounded-lg" />
+            <div
+              class="absolute top-4 left-4 bg-sage-green text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg">
+              <span>✨</span>
+              Reception
+            </div>
           </div>
-          <div class="border-l-2 border-sage-green h-22 mx-4"></div>
-          <div class="text-center font-garamond text-sage-green m-1">
-            <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase mt-1">
-              3:00 PM
-            </p>
-            <p class="text-xl md:text-lg sm:text-md xs:text-sm">
-              Cubao Cathedral
-            </p>
+          <h3 class="font-garamond text-2xl mb-4 text-dusty-pink">
+            Cities Events Place
+          </h3>
+          <div class="space-y-3 text-gray-700 mb-6">
+            <div class="flex items-center justify-center gap-3 text-dusty-pink">
+              <span>📍</span>
+              <span>30 Sgt. Esguerra Ave, Diliman, QC</span>
+            </div>
+            <div class="flex items-center justify-center gap-3 text-dusty-pink">
+              <span class="text-dusty-pink">🕐</span>
+              <span>5:00 PM - 9:00 pM</span>
+            </div>
           </div>
+          <a href="https://maps.app.goo.gl/nF6C8nyU4jH4YDW47"
+            class="inline-block py-3 px-8 bg-dusty-pink hover:bg-old-rose text-white rounded-full font-semibold transition-all duration-300">View
+            Map</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Welcome Message / Invitation -->
-    <section id="welcome" class="py-10 bg-light-beige text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="font-garamond text-4xl mb-6 text-dusty-pink">
-          Dear Friends and Family!
+  <section id="dress-code" class="py-10 px-4 scroll-mt-20" style="background-color: var(--color-light-beige)">
+    <div class="container mx-auto text-center">
+      <div class="mb-12">
+        <h2 class="font-garamond text-4xl text-balance mb-4" style="color: var(--color-dusty-pink)">
+          Dress Code & Color Palette
         </h2>
-        <p
-          class="max-w-7xl mx-auto text-lg leading-relaxed text-dusty-pink mb-8"
-        >
-          A significant and joyful event will soon take place in our lives - our
-          wedding! We are beyond excited to embark on this journey together and
-          would be truly honored if you could share in the magic of this special
-          day with us.
-        </p>
-        <p class="font-garamond text-2xl text-dusty-pink">Julie & Ezra</p>
       </div>
-    </section>
 
-    <!-- Gallery Section with Swiper -->
-    <!-- Gallery Section with Flickity -->
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-0 scroll-mt-20">
-      <div id="image-slider" class="splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <a
-                href="./14.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./14.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./1.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./1.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./2.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./2.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./3.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./3.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./4.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./4.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./5.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./5.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./6.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./6.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./7.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./7.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./8.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./8.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./9.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./9.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./10.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./10.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./11.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./11.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./12.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./12.jpg" />
-              </a>
-            </li>
-            <li class="splide__slide">
-              <a
-                href="./13.jpg"
-                class="glightbox"
-                data-gallery="wedding-gallery"
-              >
-                <img src="./13.jpg" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Story -->
-    <section id="story" class="py-10 bg-sage-green text-center scroll-mt-20">
-      <div class="container mx-auto px-4">
-        <h2 class="font-garamond text-4xl mb-10 text-light-beige">
-          Our Journey
-        </h2>
-        <p
-          class="max-w-3xl mx-auto text-lg leading-relaxed text-light-beige mb-8"
-        >
-          Our love story began not with a grand gesture, but with a quiet
-          understanding and a shared sense of humor. Over the years, our bond
-          has grown stronger with every shared laugh, every supporting hand, and
-          every dream woven together. This wedding marks not just a day, but the
-          beautiful continuation of a commitment we cherish deeply.
+      <div class="mb-12">
+        <p class="text-lg leading-relaxed mb-8" style="color: var(--color-dark-text)">
+          We invite our cherished guests to join us in a palette of warm,
+          elegant colors that complement our wedding theme. We kindly request
+          a
+          <strong style="color: var(--color-dusty-pink)">formal to semi-formal attire</strong>.
         </p>
-        <p
-          class="max-w-3xl mx-auto text-xl leading-relaxed text-light-beige italic mt-8 font-garamond"
-        >
-          "Love is not finding someone to live with, it's finding someone you
-          can't live without."
-        </p>
-      </div>
-    </section>
 
-    <!-- Location / Venue -->
-    <section id="location" class="py-10 bg-light-beige text-center scroll-mt-20">
-      <div class="container mx-auto px-4 max-w-6xl">
-        <div class="text-center mb-16">
-          <h2 class="font-garamond text-4xl text-dusty-pink mb-4">Location</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-12">
-          <div class="text-center">
-            <div class="relative mb-6">
-              <img
-                src="./cubao-cathedral.jpg"
-                alt="Wedding ceremony church"
-                class="w-full h-64 object-cover rounded-lg"
-              />
-              <div
-                class="absolute top-4 left-4 bg-sage-green text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg"
-              >
-                <span>♥</span>
-                Ceremony
-              </div>
-            </div>
-            <h3 class="font-garamond text-2xl mb-4 text-dusty-pink">
-              The Cubao Cathedral
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+          <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 border border-opacity-20"
+            style="border-color: var(--color-dusty-pink)">
+            <h3 class="font-garamond text-2xl mb-4" style="color: var(--color-dusty-pink)">
+              For the Ladies
             </h3>
-            <div class="space-y-3 text-gray-700 mb-6">
-              <div class="flex items-center justify-center gap-3">
-                <span>📍</span>
-                <span class="text-dusty-pink"
-                  >40 Lantana, Cubao, Quezon City</span
-                >
-              </div>
-              <div class="flex items-center justify-center gap-3">
-                <span>🕐</span>
-                <span class="text-dusty-pink">2:00 PM</span>
-              </div>
-            </div>
-            <a
-              href="https://maps.app.goo.gl/Xuh8FUysyAF5bpAp6"
-              class="inline-block py-3 px-8 bg-dusty-pink hover:bg-old-rose text-white rounded-full font-semibold transition-all duration-300"
-              >View Map</a
-            >
+            <ul class="text-left space-y-2" style="color: var(--color-dark-text)">
+              <li>• Formal or semi-formal gowns.</li>
+              <li>• Cocktail dresses are also welcome.</li>
+              <li>• Avoid white, cream, or ivory.</li>
+            </ul>
           </div>
 
-          <div class="text-center">
-            <div class="relative mb-6">
-              <img
-                src="./cities.jpg"
-                alt="Wedding reception venue"
-                class="w-full h-64 object-cover rounded-lg"
-              />
-              <div
-                class="absolute top-4 left-4 bg-sage-green text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg"
-              >
-                <span>✨</span>
-                Reception
-              </div>
-            </div>
-            <h3 class="font-garamond text-2xl mb-4 text-dusty-pink">
-              Cities Events Place
+          <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 border border-opacity-20"
+            style="border-color: var(--color-dusty-pink)">
+            <h3 class="font-garamond text-2xl mb-4" style="color: var(--color-dusty-pink)">
+              For the Gentlemen
             </h3>
-            <div class="space-y-3 text-gray-700 mb-6">
-              <div
-                class="flex items-center justify-center gap-3 text-dusty-pink"
-              >
-                <span>📍</span>
-                <span>30 Sgt. Esguerra Ave, Diliman, QC</span>
-              </div>
-              <div
-                class="flex items-center justify-center gap-3 text-dusty-pink"
-              >
-                <span class="text-dusty-pink">🕐</span>
-                <span>5:00 PM - 9:00 pM</span>
-              </div>
-            </div>
-            <a
-              href="https://maps.app.goo.gl/nF6C8nyU4jH4YDW47"
-              class="inline-block py-3 px-8 bg-dusty-pink hover:bg-old-rose text-white rounded-full font-semibold transition-all duration-300"
-              >View Map</a
-            >
+            <ul class="text-left space-y-2" style="color: var(--color-dark-text)">
+              <li>• Suit and tie, or a tuxedo.</li>
+              <li>• Dress shirts and dress trousers.</li>
+              <li>• Jacket preferred.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section
-      id="dress-code"
-      class="py-10 px-4 scroll-mt-20"
-      style="background-color: var(--color-light-beige)"
-    >
-      <div class="container mx-auto text-center">
         <div class="mb-12">
-          <h2
-            class="font-garamond text-4xl text-balance mb-4"
-            style="color: var(--color-dusty-pink)"
-          >
-            Dress Code & Color Palette
+          <p class="text-lg mb-6" style="color: var(--color-dark-text)">
+            Our preferred colors for your outfits are shades of pink and
+            green. Feel free to choose from the beautiful spectrum below:
+          </p>
+
+          <div class="flex flex-col md:flex-row justify-center items-center gap-2">
+            <div class="flex justify-center">
+              <div class="color-swatch bg-sage-green"></div>
+              <div class="color-swatch bg-cadmium-green"></div>
+              <div class="color-swatch bg-muted-dark-green"></div>
+            </div>
+            <div class="border-l-2 border-gray-300 h-22 mx-4 lg:hidden md:block sm:block"></div>
+
+            <div class="flex justify-center">
+              <div class="color-swatch bg-rosegold"></div>
+              <div class="color-swatch bg-old-rose"></div>
+              <div class="color-swatch bg-dusty-pink"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="py-20 px-4 relative scroll-mt-20" style="background-color: #f8e8ea">
+    <div class="container mx-auto max-w-4xl">
+      <div class="floral-border text-center mb-16">
+        <div class="mb-5">
+          <h2 class="font-garamond text-4xl text-balance mb-4" style="color: var(--color-dusty-pink)">
+            The special day
           </h2>
         </div>
-
-        <div class="mb-12">
-          <p
-            class="text-lg leading-relaxed mb-8"
-            style="color: var(--color-dark-text)"
-          >
-            We invite our cherished guests to join us in a palette of warm,
-            elegant colors that complement our wedding theme. We kindly request
-            a
-            <strong style="color: var(--color-dusty-pink)"
-              >formal to semi-formal attire</strong
-            >.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
-            <div
-              class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 border border-opacity-20"
-              style="border-color: var(--color-dusty-pink)"
-            >
-              <h3
-                class="font-garamond text-2xl mb-4"
-                style="color: var(--color-dusty-pink)"
-              >
-                For the Ladies
-              </h3>
-              <ul
-                class="text-left space-y-2"
-                style="color: var(--color-dark-text)"
-              >
-                <li>• Formal or semi-formal gowns.</li>
-                <li>• Cocktail dresses are also welcome.</li>
-                <li>• Avoid white, cream, or ivory.</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-6 border border-opacity-20"
-              style="border-color: var(--color-dusty-pink)"
-            >
-              <h3
-                class="font-garamond text-2xl mb-4"
-                style="color: var(--color-dusty-pink)"
-              >
-                For the Gentlemen
-              </h3>
-              <ul
-                class="text-left space-y-2"
-                style="color: var(--color-dark-text)"
-              >
-                <li>• Suit and tie, or a tuxedo.</li>
-                <li>• Dress shirts and dress trousers.</li>
-                <li>• Jacket preferred.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mb-12">
-            <p class="text-lg mb-6" style="color: var(--color-dark-text)">
-              Our preferred colors for your outfits are shades of pink and
-              green. Feel free to choose from the beautiful spectrum below:
-            </p>
-
-            <div
-              class="flex flex-col md:flex-row justify-center items-center gap-2"
-            >
-              <div class="flex justify-center">
-                <div class="color-swatch bg-sage-green"></div>
-                <div class="color-swatch bg-cadmium-green"></div>
-                <div class="color-swatch bg-muted-dark-green"></div>
-              </div>
-              <div
-                class="border-l-2 border-gray-300 h-22 mx-4 lg:hidden md:block sm:block"
-              ></div>
-
-              <div class="flex justify-center">
-                <div class="color-swatch bg-rosegold"></div>
-                <div class="color-swatch bg-old-rose"></div>
-                <div class="color-swatch bg-dusty-pink"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="text-lg text-muted-foreground mt-4">
+          A timeline of our special day
+        </p>
       </div>
-    </section>
 
-    <section
-      id="schedule"
-      class="py-20 px-4 relative scroll-mt-20"
-      style="background-color: #f8e8ea"
-    >
-      <div class="container mx-auto max-w-4xl">
-        <div class="floral-border text-center mb-16">
-          <div class="mb-5">
-            <h2
-              class="font-garamond text-4xl text-balance mb-4"
-              style="color: var(--color-dusty-pink)"
-            >
-              The special day
-            </h2>
-          </div>
-          <p class="text-lg text-muted-foreground mt-4">
-            A timeline of our special day
-          </p>
-        </div>
+      <div class="relative">
+        <!-- Central timeline line -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-sage-green transform -translate-x-1/2 rounded-full"></div>
 
-        <div class="relative">
-          <!-- Central timeline line -->
-          <div
-            class="absolute left-1/2 top-0 bottom-0 w-1 bg-sage-green transform -translate-x-1/2 rounded-full"
-          ></div>
-
-          <div class="space-y-16 md:space-y-20 relative z-10">
-            <!-- Event 1 (Right) -->
-            <div class="flex flex-col md:flex-row items-center">
-              <!-- Card -->
-              <div class="hidden md:flex w-1/2 justify-end pr-8">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs w-9/12"
-                  style="color: var(--color-dusty-pink)"
-                >
-                  <div class="flex items-center gap-3 mb-3">
-                    <h3 class="script-heading text-xl">Wedding Ceremony</h3>
-                  </div>
-                  <p class="text-gray-700 text-sm mb-2">
-                    Exchange vows at Immaculate conception de cubao
-                  </p>
-                  <p class="text-xs text-gray-500">2:00 PM - 3:00 PM</p>
-                </div>
-              </div>
-              <!-- Marker -->
-              <div
-                class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
-                style="background-color: var(--color-dusty-pink)"
-              >
-                <svg
-                  width="35px"
-                  height="35px"
-                  class="mb-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffffff"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M12.0002 8L8.79795 9.5611C8.14576 9.87904 7.81967 10.038 7.58124 10.278C7.37041 10.4903 7.20988 10.7471 7.11148 11.0297C7.0002 11.3492 7.0002 11.7119 7.0002 12.4375V21H17.0002V12.4375C17.0002 11.7119 17.0002 11.3492 16.8889 11.0297C16.7905 10.7471 16.63 10.4903 16.4192 10.278C16.1807 10.038 15.8546 9.87904 15.2024 9.5611L12.0002 8ZM12.0002 8V3M14.0002 5H10.0002M7.0002 13L4.76897 14.1156C4.12683 14.4366 3.80576 14.5971 3.57118 14.8366C3.36374 15.0484 3.20598 15.3037 3.10931 15.5839C3 15.9009 3 16.2598 3 16.9778V21H21V16.9777C21 16.2598 21 15.9008 20.8907 15.5839C20.794 15.3037 20.6363 15.0484 20.4289 14.8366C20.1943 14.5971 19.8732 14.4366 19.2311 14.1155L17.0002 13M14.0002 21V17C14.0002 15.8954 13.1048 15 12.0002 15C10.8956 15 10.0002 15.8954 10.0002 17V21H14.0002Z"
-                      stroke="#ffffff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <!-- Mobile card -->
-              <div class="md:hidden mt-4">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs"
-                  style="color: var(--color-dusty-pink)"
-                >
+        <div class="space-y-16 md:space-y-20 relative z-10">
+          <!-- Event 1 (Right) -->
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- Card -->
+            <div class="hidden md:flex w-1/2 justify-end pr-8">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs w-9/12"
+                style="color: var(--color-dusty-pink)">
+                <div class="flex items-center gap-3 mb-3">
                   <h3 class="script-heading text-xl">Wedding Ceremony</h3>
-                  <p class="text-gray-700 text-sm mb-2">
-                    Exchange vows at Immaculate conception de cubao
-                  </p>
-                  <p class="text-xs text-gray-500">2:00 PM - 3:00 PM</p>
                 </div>
+                <p class="text-gray-700 text-sm mb-2">
+                  Exchange vows at Immaculate conception de cubao
+                </p>
+                <p class="text-xs text-gray-500">2:00 PM - 3:00 PM</p>
               </div>
-              <!-- Empty space -->
-              <div class="hidden md:block w-1/2"></div>
             </div>
+            <!-- Marker -->
+            <div
+              class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
+              style="background-color: var(--color-dusty-pink)">
+              <svg width="35px" height="35px" class="mb-1" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M12.0002 8L8.79795 9.5611C8.14576 9.87904 7.81967 10.038 7.58124 10.278C7.37041 10.4903 7.20988 10.7471 7.11148 11.0297C7.0002 11.3492 7.0002 11.7119 7.0002 12.4375V21H17.0002V12.4375C17.0002 11.7119 17.0002 11.3492 16.8889 11.0297C16.7905 10.7471 16.63 10.4903 16.4192 10.278C16.1807 10.038 15.8546 9.87904 15.2024 9.5611L12.0002 8ZM12.0002 8V3M14.0002 5H10.0002M7.0002 13L4.76897 14.1156C4.12683 14.4366 3.80576 14.5971 3.57118 14.8366C3.36374 15.0484 3.20598 15.3037 3.10931 15.5839C3 15.9009 3 16.2598 3 16.9778V21H21V16.9777C21 16.2598 21 15.9008 20.8907 15.5839C20.794 15.3037 20.6363 15.0484 20.4289 14.8366C20.1943 14.5971 19.8732 14.4366 19.2311 14.1155L17.0002 13M14.0002 21V17C14.0002 15.8954 13.1048 15 12.0002 15C10.8956 15 10.0002 15.8954 10.0002 17V21H14.0002Z"
+                    stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </div>
+            <!-- Mobile card -->
+            <div class="md:hidden mt-4">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs"
+                style="color: var(--color-dusty-pink)">
+                <h3 class="script-heading text-xl">Wedding Ceremony</h3>
+                <p class="text-gray-700 text-sm mb-2">
+                  Exchange vows at Immaculate conception de cubao
+                </p>
+                <p class="text-xs text-gray-500">2:00 PM - 3:00 PM</p>
+              </div>
+            </div>
+            <!-- Empty space -->
+            <div class="hidden md:block w-1/2"></div>
+          </div>
 
-            <!-- Event 2 (Left) -->
-            <div class="flex flex-col md:flex-row items-center">
-              <!-- Empty space -->
-              <div class="hidden md:block w-1/2"></div>
-              <!-- Marker -->
-              <div
-                class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
-                style="background-color: var(--color-dusty-pink)"
-              >
-                <svg
-                  width="35px"
-                  height="35px"
-                  class="mb-1"
-                  viewBox="0 -0.5 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M15.8227 8.57733H4.64368L10.2327 13.5773L15.8227 8.57733Z"
-                      stroke="#ffffff"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                    <path
-                      d="M16.892 10.1134C16.4778 10.1132 16.1419 10.4489 16.1418 10.8631C16.1416 11.2773 16.4773 11.6132 16.8915 11.6134L16.892 10.1134ZM18.7815 10.2854L18.3633 9.66278L18.3631 9.66295L18.7815 10.2854ZM20.0345 8.74635L20.7279 9.03218L20.7281 9.03169L20.0345 8.74635ZM19.297 5.00635L18.7652 5.53523L18.7664 5.53644L19.297 5.00635ZM16.5607 4.01645L16.6349 4.76278L16.6349 4.76278L16.5607 4.01645ZM14.0621 5.52635L13.4388 5.10924L13.4374 5.11131L14.0621 5.52635ZM12.857 6.43911C12.7591 6.8416 13.006 7.24722 13.4085 7.34511C13.811 7.44299 14.2166 7.19607 14.3145 6.79359L12.857 6.43911ZM10.2327 19.2564C9.81849 19.2564 9.48271 19.5921 9.48271 20.0064C9.48271 20.4206 9.81849 20.7564 10.2327 20.7564V19.2564ZM14.425 20.7564C14.8392 20.7564 15.175 20.4206 15.175 20.0064C15.175 19.5921 14.8392 19.2564 14.425 19.2564V20.7564ZM9.48271 20.0064C9.48271 20.4206 9.8185 20.7564 10.2327 20.7564C10.6469 20.7564 10.9827 20.4206 10.9827 20.0064H9.48271ZM10.9827 13.5774C10.9827 13.1631 10.6469 12.8274 10.2327 12.8274C9.8185 12.8274 9.48271 13.1631 9.48271 13.5774H10.9827ZM10.2327 20.7564C10.6469 20.7564 10.9827 20.4206 10.9827 20.0064C10.9827 19.5921 10.6469 19.2564 10.2327 19.2564V20.7564ZM6.04144 19.2564C5.62723 19.2564 5.29144 19.5921 5.29144 20.0064C5.29144 20.4206 5.62723 20.7564 6.04144 20.7564V19.2564ZM16.8915 11.6134C17.7134 11.6136 18.516 11.3677 19.2 10.9078L18.3631 9.66295C17.9248 9.95762 17.4134 10.1135 16.892 10.1134L16.8915 11.6134ZM19.1997 10.9079C19.882 10.4496 20.413 9.79605 20.7279 9.03218L19.3411 8.46052C19.1377 8.95401 18.7964 9.37182 18.3633 9.66278L19.1997 10.9079ZM20.7281 9.03169C21.3699 7.47152 21.0167 5.66646 19.8276 4.47626L18.7664 5.53644C19.5234 6.29409 19.7549 7.45459 19.3409 8.46101L20.7281 9.03169ZM19.8288 4.47747C18.948 3.59183 17.7243 3.14718 16.4866 3.27012L16.6349 4.76278C17.4181 4.68498 18.1984 4.96532 18.7652 5.53523L19.8288 4.47747ZM16.4866 3.27012C15.2492 3.39303 14.1345 4.06959 13.4388 5.10924L14.6854 5.94346C15.1361 5.26989 15.8514 4.84061 16.6349 4.76278L16.4866 3.27012ZM13.4374 5.11131C13.1684 5.51611 12.9721 5.96568 12.857 6.43911L14.3145 6.79359C14.3887 6.4886 14.5149 6.20012 14.6868 5.94139L13.4374 5.11131ZM10.2327 20.7564H14.425V19.2564H10.2327V20.7564ZM10.9827 20.0064V13.5774H9.48271V20.0064H10.9827ZM10.2327 19.2564H6.04144V20.7564H10.2327V19.2564Z"
-                      fill="#ffffff"
-                    ></path>
-                  </g>
-                </svg>
-              </div>
-              <!-- Card -->
-              <div class="hidden md:flex w-1/2 justify-start pl-8">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs w-9/12"
-                  style="color: var(--color-dusty-pink)"
-                >
-                  <div class="flex items-center gap-3 mb-3">
-                    <h3 class="script-heading text-xl">Cocktail Hour</h3>
-                  </div>
-                  <p class="text-gray-700 text-sm mb-2">Snack time!</p>
-                  <p class="text-xs text-gray-500">4:30:00 PM - 5:00 PM</p>
-                </div>
-              </div>
-              <!-- Mobile card -->
-              <div class="md:hidden mt-4">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs"
-                  style="color: var(--color-dusty-pink)"
-                >
+          <!-- Event 2 (Left) -->
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- Empty space -->
+            <div class="hidden md:block w-1/2"></div>
+            <!-- Marker -->
+            <div
+              class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
+              style="background-color: var(--color-dusty-pink)">
+              <svg width="35px" height="35px" class="mb-1" viewBox="0 -0.5 25 25" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.8227 8.57733H4.64368L10.2327 13.5773L15.8227 8.57733Z" stroke="#ffffff" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path
+                    d="M16.892 10.1134C16.4778 10.1132 16.1419 10.4489 16.1418 10.8631C16.1416 11.2773 16.4773 11.6132 16.8915 11.6134L16.892 10.1134ZM18.7815 10.2854L18.3633 9.66278L18.3631 9.66295L18.7815 10.2854ZM20.0345 8.74635L20.7279 9.03218L20.7281 9.03169L20.0345 8.74635ZM19.297 5.00635L18.7652 5.53523L18.7664 5.53644L19.297 5.00635ZM16.5607 4.01645L16.6349 4.76278L16.6349 4.76278L16.5607 4.01645ZM14.0621 5.52635L13.4388 5.10924L13.4374 5.11131L14.0621 5.52635ZM12.857 6.43911C12.7591 6.8416 13.006 7.24722 13.4085 7.34511C13.811 7.44299 14.2166 7.19607 14.3145 6.79359L12.857 6.43911ZM10.2327 19.2564C9.81849 19.2564 9.48271 19.5921 9.48271 20.0064C9.48271 20.4206 9.81849 20.7564 10.2327 20.7564V19.2564ZM14.425 20.7564C14.8392 20.7564 15.175 20.4206 15.175 20.0064C15.175 19.5921 14.8392 19.2564 14.425 19.2564V20.7564ZM9.48271 20.0064C9.48271 20.4206 9.8185 20.7564 10.2327 20.7564C10.6469 20.7564 10.9827 20.4206 10.9827 20.0064H9.48271ZM10.9827 13.5774C10.9827 13.1631 10.6469 12.8274 10.2327 12.8274C9.8185 12.8274 9.48271 13.1631 9.48271 13.5774H10.9827ZM10.2327 20.7564C10.6469 20.7564 10.9827 20.4206 10.9827 20.0064C10.9827 19.5921 10.6469 19.2564 10.2327 19.2564V20.7564ZM6.04144 19.2564C5.62723 19.2564 5.29144 19.5921 5.29144 20.0064C5.29144 20.4206 5.62723 20.7564 6.04144 20.7564V19.2564ZM16.8915 11.6134C17.7134 11.6136 18.516 11.3677 19.2 10.9078L18.3631 9.66295C17.9248 9.95762 17.4134 10.1135 16.892 10.1134L16.8915 11.6134ZM19.1997 10.9079C19.882 10.4496 20.413 9.79605 20.7279 9.03218L19.3411 8.46052C19.1377 8.95401 18.7964 9.37182 18.3633 9.66278L19.1997 10.9079ZM20.7281 9.03169C21.3699 7.47152 21.0167 5.66646 19.8276 4.47626L18.7664 5.53644C19.5234 6.29409 19.7549 7.45459 19.3409 8.46101L20.7281 9.03169ZM19.8288 4.47747C18.948 3.59183 17.7243 3.14718 16.4866 3.27012L16.6349 4.76278C17.4181 4.68498 18.1984 4.96532 18.7652 5.53523L19.8288 4.47747ZM16.4866 3.27012C15.2492 3.39303 14.1345 4.06959 13.4388 5.10924L14.6854 5.94346C15.1361 5.26989 15.8514 4.84061 16.6349 4.76278L16.4866 3.27012ZM13.4374 5.11131C13.1684 5.51611 12.9721 5.96568 12.857 6.43911L14.3145 6.79359C14.3887 6.4886 14.5149 6.20012 14.6868 5.94139L13.4374 5.11131ZM10.2327 20.7564H14.425V19.2564H10.2327V20.7564ZM10.9827 20.0064V13.5774H9.48271V20.0064H10.9827ZM10.2327 19.2564H6.04144V20.7564H10.2327V19.2564Z"
+                    fill="#ffffff"></path>
+                </g>
+              </svg>
+            </div>
+            <!-- Card -->
+            <div class="hidden md:flex w-1/2 justify-start pl-8">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs w-9/12"
+                style="color: var(--color-dusty-pink)">
+                <div class="flex items-center gap-3 mb-3">
                   <h3 class="script-heading text-xl">Cocktail Hour</h3>
-                  <p class="text-gray-700 text-sm mb-2">Snack time!</p>
-                  <p class="text-xs text-gray-500">4:30:00 PM - 5:00 PM</p>
                 </div>
+                <p class="text-gray-700 text-sm mb-2">Snack time!</p>
+                <p class="text-xs text-gray-500">4:30:00 PM - 5:00 PM</p>
               </div>
             </div>
-
-            <!-- Event 3 (Right) -->
-            <div class="flex flex-col md:flex-row items-center">
-              <!-- Card -->
-              <div class="hidden md:flex w-1/2 justify-end pr-8">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs w-9/12"
-                  style="color: var(--color-dusty-pink)"
-                >
-                  <div class="flex items-center gap-3 mb-3">
-                    <h3 class="script-heading text-xl">Reception</h3>
-                  </div>
-                  <p class="text-gray-700 text-sm mb-2">Wedding celebration</p>
-                  <p class="text-xs text-gray-500">5:20 PM - 8:00 PM</p>
-                </div>
+            <!-- Mobile card -->
+            <div class="md:hidden mt-4">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs"
+                style="color: var(--color-dusty-pink)">
+                <h3 class="script-heading text-xl">Cocktail Hour</h3>
+                <p class="text-gray-700 text-sm mb-2">Snack time!</p>
+                <p class="text-xs text-gray-500">4:30:00 PM - 5:00 PM</p>
               </div>
-              <!-- Marker -->
-              <div
-                class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
-                style="background-color: var(--color-dusty-pink)"
-              >
-                <svg
-                  width="30px"
-                  height="30px"
-                  fill="#ffffff"
-                  height="200px"
-                  width="200px"
-                  version="1.1"
-                  id="Capa_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 295.87 295.87"
-                  xml:space="preserve"
-                  stroke="#ffffff"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <g>
-                      <path
-                        d="M295.432,258.389c-1.439-4.178-5.991-6.399-10.169-4.96l-19.73,6.794l-34.864-101.255c0.048-0.038,0.093-0.08,0.14-0.117 c17.92-14.261,20.406-54.396,4.921-99.374c-6.33-18.374-14.907-35.043-24.804-48.206c-2.087-2.773-5.725-3.885-8.999-2.757 l-54.158,18.649L93.61,8.514c-3.275-1.126-6.912-0.016-8.999,2.757c-9.896,13.163-18.474,29.832-24.805,48.207 c-15.482,44.97-12.999,85.1,4.914,99.366c0.137,0.109,0.271,0.225,0.41,0.332L30.337,260.223l-19.73-6.794 c-4.179-1.44-8.731,0.782-10.169,4.96c-1.438,4.178,0.782,8.73,4.96,10.169l54.588,18.796c0.862,0.297,1.741,0.438,2.604,0.438 c3.32,0,6.423-2.082,7.564-5.397c1.438-4.178-0.782-8.73-4.96-10.169l-19.729-6.98l34.819-101.311c0.009,0,0.017,0,0.025,0 c4.338,0,8.806-0.901,13.302-2.963c19.485-8.934,39.519-36.041,51.924-72.067c0.788-2.288,1.532-4.53,2.231-6.815 c0.699,2.285,1.443,4.598,2.231,6.886c0.596,1.729,1.215,3.442,1.845,5.131c1.803,4.833,3.741,9.497,5.797,13.955 c15.576,33.778,37.776,55.893,57.376,56.05c0.068,0.001,0.139-0.176,0.207-0.176c0.002,0,0.003,0,0.005,0 c0.118,0,0.233,0.175,0.352,0.173l34.823,101.231l-19.729,6.84c-4.178,1.439-6.398,6.015-4.96,10.192 c1.142,3.316,4.244,5.409,7.564,5.409c0.863,0,1.742-0.135,2.604-0.432l54.588-18.793 C294.65,267.117,296.871,262.567,295.432,258.389z M167.363,89.934h59.98c6.147,32.301,0.503,54.387-9.138,57.706 c-0.939,0.324-1.913,0.294-2.976,0.294h-0.002c-6.637,0-15.815-6.098-24.551-16.62C181.743,120.554,173.581,106.155,167.363,89.934 z M128.173,89.934c-6.218,16.222-14.381,30.81-23.314,41.569c-8.735,10.523-17.913,16.806-24.549,16.806 c-0.267,0-0.527-0.01-0.783-0.029c-0.536-0.042-1.051-0.13-1.553-0.261c-0.158-0.066-0.313-0.135-0.477-0.191 c-0.186-0.063-0.372-0.112-0.559-0.161c-9.402-3.788-14.816-25.878-8.753-57.732H128.173z"
-                      ></path>
-                      <path
-                        d="M176.996,165.253c-14.244-4.551-24.337,2.637-29.225,13.465c-5.879-9.696-14.986-18.016-29.226-13.465 c-16.907,5.407-34.606,41.693,29.226,82.419C211.597,206.946,193.898,170.66,176.996,165.253z"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <!-- Mobile card -->
-              <div class="md:hidden mt-4">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs"
-                  style="color: var(--color-dusty-pink)"
-                >
-                  <h3 class="script-heading text-xl">Reception Dinner</h3>
-                  <p class="text-gray-700 text-sm mb-2">Wedding celebration</p>
-                  <p class="text-xs text-gray-500">5:20 PM - 8:00 PM</p>
-                </div>
-              </div>
-              <!-- Empty space -->
-              <div class="hidden md:block w-1/2"></div>
             </div>
+          </div>
 
-            <!-- Event 4 (Left) -->
-            <div class="flex flex-col md:flex-row items-center">
-              <!-- Empty space -->
-              <div class="hidden md:block w-1/2"></div>
-              <!-- Marker -->
-              <div
-                class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
-                style="background-color: var(--color-dusty-pink)"
-              >
-                <svg
-                  width="25px"
-                  height="25px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
+          <!-- Event 3 (Right) -->
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- Card -->
+            <div class="hidden md:flex w-1/2 justify-end pr-8">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs w-9/12"
+                style="color: var(--color-dusty-pink)">
+                <div class="flex items-center gap-3 mb-3">
+                  <h3 class="script-heading text-xl">Reception</h3>
+                </div>
+                <p class="text-gray-700 text-sm mb-2">Wedding celebration</p>
+                <p class="text-xs text-gray-500">5:20 PM - 8:00 PM</p>
+              </div>
+            </div>
+            <!-- Marker -->
+            <div
+              class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
+              style="background-color: var(--color-dusty-pink)">
+              <svg width="30px" height="30px" fill="#ffffff" height="200px" width="200px" version="1.1" id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 295.87 295.87" xml:space="preserve" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
                     <path
-                      d="M9 19C9 20.1046 7.65685 21 6 21C4.34315 21 3 20.1046 3 19C3 17.8954 4.34315 17 6 17C7.65685 17 9 17.8954 9 19ZM9 19V5L21 3V17M21 17C21 18.1046 19.6569 19 18 19C16.3431 19 15 18.1046 15 17C15 15.8954 16.3431 15 18 15C19.6569 15 21 15.8954 21 17ZM9 9L21 7"
-                      stroke="#ffffff"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
+                      d="M295.432,258.389c-1.439-4.178-5.991-6.399-10.169-4.96l-19.73,6.794l-34.864-101.255c0.048-0.038,0.093-0.08,0.14-0.117 c17.92-14.261,20.406-54.396,4.921-99.374c-6.33-18.374-14.907-35.043-24.804-48.206c-2.087-2.773-5.725-3.885-8.999-2.757 l-54.158,18.649L93.61,8.514c-3.275-1.126-6.912-0.016-8.999,2.757c-9.896,13.163-18.474,29.832-24.805,48.207 c-15.482,44.97-12.999,85.1,4.914,99.366c0.137,0.109,0.271,0.225,0.41,0.332L30.337,260.223l-19.73-6.794 c-4.179-1.44-8.731,0.782-10.169,4.96c-1.438,4.178,0.782,8.73,4.96,10.169l54.588,18.796c0.862,0.297,1.741,0.438,2.604,0.438 c3.32,0,6.423-2.082,7.564-5.397c1.438-4.178-0.782-8.73-4.96-10.169l-19.729-6.98l34.819-101.311c0.009,0,0.017,0,0.025,0 c4.338,0,8.806-0.901,13.302-2.963c19.485-8.934,39.519-36.041,51.924-72.067c0.788-2.288,1.532-4.53,2.231-6.815 c0.699,2.285,1.443,4.598,2.231,6.886c0.596,1.729,1.215,3.442,1.845,5.131c1.803,4.833,3.741,9.497,5.797,13.955 c15.576,33.778,37.776,55.893,57.376,56.05c0.068,0.001,0.139-0.176,0.207-0.176c0.002,0,0.003,0,0.005,0 c0.118,0,0.233,0.175,0.352,0.173l34.823,101.231l-19.729,6.84c-4.178,1.439-6.398,6.015-4.96,10.192 c1.142,3.316,4.244,5.409,7.564,5.409c0.863,0,1.742-0.135,2.604-0.432l54.588-18.793 C294.65,267.117,296.871,262.567,295.432,258.389z M167.363,89.934h59.98c6.147,32.301,0.503,54.387-9.138,57.706 c-0.939,0.324-1.913,0.294-2.976,0.294h-0.002c-6.637,0-15.815-6.098-24.551-16.62C181.743,120.554,173.581,106.155,167.363,89.934 z M128.173,89.934c-6.218,16.222-14.381,30.81-23.314,41.569c-8.735,10.523-17.913,16.806-24.549,16.806 c-0.267,0-0.527-0.01-0.783-0.029c-0.536-0.042-1.051-0.13-1.553-0.261c-0.158-0.066-0.313-0.135-0.477-0.191 c-0.186-0.063-0.372-0.112-0.559-0.161c-9.402-3.788-14.816-25.878-8.753-57.732H128.173z">
+                    </path>
+                    <path
+                      d="M176.996,165.253c-14.244-4.551-24.337,2.637-29.225,13.465c-5.879-9.696-14.986-18.016-29.226-13.465 c-16.907,5.407-34.606,41.693,29.226,82.419C211.597,206.946,193.898,170.66,176.996,165.253z">
+                    </path>
                   </g>
-                </svg>
+                </g>
+              </svg>
+            </div>
+            <!-- Mobile card -->
+            <div class="md:hidden mt-4">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200 max-w-xs"
+                style="color: var(--color-dusty-pink)">
+                <h3 class="script-heading text-xl">Reception Dinner</h3>
+                <p class="text-gray-700 text-sm mb-2">Wedding celebration</p>
+                <p class="text-xs text-gray-500">5:20 PM - 8:00 PM</p>
               </div>
-              <!-- Card -->
-              <div class="hidden md:flex w-1/2 justify-start pl-8">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs w-9/12"
-                  style="color: var(--color-dusty-pink)"
-                >
-                  <div class="flex items-center gap-3 mb-3">
-                    <h3 class="script-heading text-xl">Happy hour</h3>
-                  </div>
-                  <p class="text-gray-700 text-sm mb-2">
-                    Party, Dance, Music and Drinks
-                  </p>
-                  <p class="text-xs text-gray-500">8:00 PM - 9:00 PM</p>
-                </div>
-              </div>
-              <!-- Mobile card -->
-              <div class="md:hidden mt-4">
-                <div
-                  class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs"
-                  style="color: var(--color-dusty-pink)"
-                >
+            </div>
+            <!-- Empty space -->
+            <div class="hidden md:block w-1/2"></div>
+          </div>
+
+          <!-- Event 4 (Left) -->
+          <div class="flex flex-col md:flex-row items-center">
+            <!-- Empty space -->
+            <div class="hidden md:block w-1/2"></div>
+            <!-- Marker -->
+            <div
+              class="text-white rounded-full flex flex-col items-center justify-center font-bold text-sm shadow-xl border-4 border-white w-14 h-14 z-20"
+              style="background-color: var(--color-dusty-pink)">
+              <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M9 19C9 20.1046 7.65685 21 6 21C4.34315 21 3 20.1046 3 19C3 17.8954 4.34315 17 6 17C7.65685 17 9 17.8954 9 19ZM9 19V5L21 3V17M21 17C21 18.1046 19.6569 19 18 19C16.3431 19 15 18.1046 15 17C15 15.8954 16.3431 15 18 15C19.6569 15 21 15.8954 21 17ZM9 9L21 7"
+                    stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </div>
+            <!-- Card -->
+            <div class="hidden md:flex w-1/2 justify-start pl-8">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs w-9/12"
+                style="color: var(--color-dusty-pink)">
+                <div class="flex items-center gap-3 mb-3">
                   <h3 class="script-heading text-xl">Happy hour</h3>
-                  <!-- <p class="text-gray-700 text-sm mb-2">
+                </div>
+                <p class="text-gray-700 text-sm mb-2">
+                  Party, Dance, Music and Drinks
+                </p>
+                <p class="text-xs text-gray-500">8:00 PM - 9:00 PM</p>
+              </div>
+            </div>
+            <!-- Mobile card -->
+            <div class="md:hidden mt-4">
+              <div class="bg-white rounded-xl p-6 shadow-lg border border-rose-200 max-w-xs"
+                style="color: var(--color-dusty-pink)">
+                <h3 class="script-heading text-xl">Happy hour</h3>
+                <!-- <p class="text-gray-700 text-sm mb-2">
                     Dance the night away with live DJ
                   </p> -->
-                  <p class="text-xs text-gray-500">8:00 PM - 9:00 PM</p>
-                </div>
+                <p class="text-xs text-gray-500">8:00 PM - 9:00 PM</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- RSVP Section -->
-    <section id="rsvp" class="py-20 bg-light-beige text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="font-garamond text-4xl mb-10 text-dusty-pink">
-          Confirm Your Presence
-        </h2>
-        <p
-          class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 mb-12"
-        >
-          Please help us with our final arrangements by letting us know if you
-          can join us on our special day. Kindly submit your RSVP by **May 1st,
-          2025**.
-        </p>
-        <form class="max-w-xl mx-auto p-0 text-left" action="#" method="POST">
+  <!-- RSVP Section -->
+  <section id="rsvp" class="py-20 bg-light-beige text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="font-garamond text-4xl mb-10 text-dusty-pink">
+        Confirm Your Presence
+      </h2>
+      <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 mb-12">
+        Your presence at our wedding would mean the world to us! The favor of your
+        reply is requested on or before <b>November 30, 2025</b>
+      </p>
+
+      <form id="rsvpForm" class="max-w-xl mx-auto p-0 text-left" onsubmit="event.preventDefault(); searchGuest();">
+        <div id="searchResult" class="mt-6 text-lg font-medium text-gray-800">
+          <!-- Initial Search Form -->
           <div class="mb-6">
-            <label
-              for="name"
-              class="block text-gray-700 text-lg font-medium mb-2"
-              >Your Name(s):</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="e.g., John & Jane Doe"
-              required
-              class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-gray-800"
-            />
+            <label for="searchName" class="block text-gray-700 text-lg font-medium mb-2">Your Name(s):</label>
+            <input type="text" id="searchName" name="name" placeholder="e.g., Imelda & Irene " required
+              class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-gray-800" />
           </div>
-          <div class="mb-8">
-            <label
-              for="dietary"
-              class="block text-gray-700 text-lg font-medium mb-2"
-              >Any Dietary Restrictions or Notes:</label
-            >
-            <textarea
-              id="dietary"
-              name="dietary"
-              rows="4"
-              placeholder="e.g., Vegetarian, Gluten-free, etc."
-              class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-gray-800"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="w-full py-4 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300"
-          >
-            Send RSVP
+          <button id="searchBtn" type="submit"
+            class="w-full py-4 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300 flex items-center justify-center">
+            <span id="searchBtnText">Search RSVP</span>
+            <svg id="searchLoading" class="animate-spin ml-2 h-5 w-5 text-light-beige hidden"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
           </button>
-        </form>
-      </div>
-    </section>
-    <script>
-      // Countdown Timer Logic
-      const weddingDate = new Date("January 3, 2026 15:00:00").getTime();
-
-      const x = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerHTML = String(days).padStart(
-          2,
-          "0"
-        );
-        document.getElementById("hours").innerHTML = String(hours).padStart(
-          2,
-          "0"
-        );
-        document.getElementById("minutes").innerHTML = String(minutes).padStart(
-          2,
-          "0"
-        );
-        document.getElementById("seconds").innerHTML = String(seconds).padStart(
-          2,
-          "0"
-        );
-
-        if (distance < 0) {
-          clearInterval(x);
-          const countdownContainer = document.querySelector(
-            ".hero-section .flex.space-x-4"
-          );
-          if (countdownContainer) {
-            countdownContainer.innerHTML =
-              '<span class="text-3xl font-garamond text-shadow-light">We are Married!</span>';
-          }
-        }
-      }, 1000);
-
-      // Mobile Menu Toggle
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        const overlay = document.getElementById("mobile-menu-overlay");
-        menu.classList.toggle("open");
-        overlay.style.display = menu.classList.contains("open")
-          ? "block"
-          : "none";
-      }
-
-      // Hide mobile menu when clicking outside
-      document
-        .getElementById("mobile-menu-overlay")
-        .addEventListener("click", toggleMobileMenu);
-
-      // Smooth scroll and active nav link highlighting
-      document.addEventListener("DOMContentLoaded", () => {
-        const navLinks = document.querySelectorAll(".nav-link");
-        const sections = document.querySelectorAll("section[id]");
-
-        function highlightNavLink() {
-          let current = "";
-          const scrollY = window.pageYOffset;
-
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-              current = section.getAttribute("id");
-            }
-          });
-
-          navLinks.forEach((link) => {
-            link.classList.remove("font-bold", "text-dusty-pink");
-            if (link.getAttribute("href").includes(current)) {
-              link.classList.add("font-bold", "text-dusty-pink");
-            }
-          });
-        }
-
-        window.addEventListener("scroll", highlightNavLink);
-        highlightNavLink();
-      });
-
-      // Seamless Marquee Fix
-      window.addEventListener("load", () => {
-        const track = document.getElementById("marquee-track");
-        const halfWidth = track.scrollWidth / 2;
-        track.style.setProperty("--scroll-width", `-${halfWidth}px`);
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  </body>
+        </div>
+      </form>
+    </div>
+  </section>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Splide("#image-slider", {
-        type: "loop",
-        drag: false,
-        arrows: true,
-        pagination: false,
-        autoScroll: {
-          speed: 0.2, // adjust speed
-          pauseOnHover: true,
-          pauseOnFocus: false,
-        },
-      }).mount({ AutoScroll: window.splide.Extensions.AutoScroll });
-      const lightbox = GLightbox({
-        selector: ".glightbox",
-        touchNavigation: true,
-        loop: true,
-        zoomable: false,
-      });
-    });
-    function setActiveNavLink() {
-      const currentHash = window.location.hash;
-      const navLinks = document.querySelectorAll(".nav-link");
+    const API_URL = "https://script.google.com/macros/s/AKfycby9gebn40clT27Woz1KU3DohfIooRcPpTtn03bMepAPyfScHDhqLwrb-k-aUo2T2QJfeQ/exec"; // replace
+    async function searchGuest() {
+      const input = document.getElementById("searchName").value.trim();
+      const btn = document.getElementById("searchBtn");
+      const btnText = document.getElementById("searchBtnText");
+      const spinner = document.getElementById("searchLoading");
+      const resultDiv = document.getElementById("searchResult");
 
-      navLinks.forEach((link) => {
-        // Remove active class from all links first
-        link.classList.remove("underline-active");
+      if (!input) return;
 
-        // Check if the link's href matches the current hash
-        if (link.getAttribute("href") === currentHash) {
-          link.classList.add("underline-active");
+      // Set loading state
+      btn.disabled = true;
+      btnText.textContent = "Searching...";
+      spinner.classList.remove("hidden");
+
+      try {
+        const response = await fetch(`${API_URL}?name=${encodeURIComponent(input)}`);
+        const data = await response.json();
+
+        if (data.error) {
+          resultDiv.innerHTML =
+            "⚠️ There was a problem. Please try again later.";
+          return;
         }
-      });
 
-      // Also handle the initial load case where no hash is present, but we might want #home to be active
-      if (currentHash === "" && document.querySelector('a[href="#home"]')) {
-        document
-          .querySelector('a[href="#home"]')
-          .classList.add("underline-active");
+        if (data.found) {
+          if (data.confirmed) {
+            // Already confirmed
+            resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">${data.name}, you have already confirmed ✅</p>
+    <button type="button" onclick="resetSearch()" 
+      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+      Search Again
+    </button>
+  </div>
+`;
+          } else {
+            // Show confirm button
+            resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">Found: <b>${data.name}</b></p>
+    <button type="button" onclick="confirmAttendance('${data.name}')"
+      class="w-full md:w-auto py-3 px-8 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300">
+      Confirm Attendance
+    </button>
+    <button type="button" onclick="resetSearch()" 
+      class="mt-4 py-2 px-4 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400">
+      Try Again
+    </button>
+  </div>
+`;
+          }
+        } else {
+          // Name not found
+          resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">❌ Name not found. Please try again.</p>
+    <button type="button" onclick="resetSearch()" 
+      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+      Try Again
+    </button>
+  </div>
+`;
+        }
+      } catch (err) {
+        console.error(err);
+        resultDiv.innerHTML = "⚠️ Error: Unable to connect.";
+      } finally {
+        // Reset button state
+        btn.disabled = false;
+        btnText.textContent = "Search RSVP";
+        spinner.classList.add("hidden");
       }
     }
 
-    document.addEventListener("DOMContentLoaded", setActiveNavLink);
+    async function confirmAttendance(name) {
+      const resultDiv = document.getElementById("searchResult");
+      resultDiv.innerHTML = "Saving your RSVP...";
 
-    window.addEventListener("hashchange", setActiveNavLink);
-
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `name=${encodeURIComponent(name)}`,
         });
-      });
-    });
+        const data = await res.json();
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll(".nav-link");
+        if (data.success) {
+          resultDiv.innerHTML = `
+          <div class="container mx-auto px-4">
+          <p class="mb-4">${name}, thank you for confirming! ✅</p>
+          <button type="button" onclick="resetSearch()" 
+            class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+            Search Again
+          </button>
+          </div>
+        `;
+        } else {
+          resultDiv.innerHTML = "⚠️ Could not update your RSVP.";
+        }
+      } catch (err) {
+        console.error(err);
+        resultDiv.innerHTML = "⚠️ Network error while confirming.";
+      }
+    }
 
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          // Remove underline from all
-          navLinks.forEach((l) => l.classList.remove("underline-active"));
-
-          // Add underline to clicked one
-          link.classList.add("underline-active");
-        });
-      });
-    });
+    function resetSearch() {
+      const resultDiv = document.getElementById("searchResult");
+      resultDiv.innerHTML = `
+      <div class="mb-6">
+        <label for="searchName" class="block text-gray-700 text-lg font-medium mb-2">
+          Your Name(s):
+        </label>
+        <input type="text" id="searchName" name="name"
+          placeholder="e.g., Imelda & Irene " required
+          class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-gray-800" />
+      </div>
+      <button id="searchBtn" type="submit"
+        class="w-full py-4 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300 flex items-center justify-center">
+        <span id="searchBtnText">Search RSVP</span>
+        <svg id="searchLoading" class="animate-spin ml-2 h-5 w-5 text-light-beige hidden"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10"
+            stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+        </svg>
+      </button>
+    `;
+    }
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("section"); // sections need IDs
-      const navLinks = document.querySelectorAll(".nav-link");
+    // Countdown Timer Logic
+    const weddingDate = new Date("January 3, 2026 15:00:00").getTime();
 
-      // Function to remove active class
-      function removeActiveClasses() {
-        navLinks.forEach((link) => link.classList.remove("underline-active"));
-      }
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = entry.target.getAttribute("id");
-              const activeLink = document.querySelector(
-                `.nav-link[href="#${id}"]`
-              );
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-              if (activeLink) {
-                removeActiveClasses();
-                activeLink.classList.add("underline-active");
-              }
-            }
-          });
-        },
-        {
-          root: null, // viewport
-          rootMargin: "0px",
-          threshold: 0.6, // 60% of section in view
-        }
+      document.getElementById("days").innerHTML = String(days).padStart(
+        2,
+        "0"
+      );
+      document.getElementById("hours").innerHTML = String(hours).padStart(
+        2,
+        "0"
+      );
+      document.getElementById("minutes").innerHTML = String(minutes).padStart(
+        2,
+        "0"
+      );
+      document.getElementById("seconds").innerHTML = String(seconds).padStart(
+        2,
+        "0"
       );
 
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
+      if (distance < 0) {
+        clearInterval(x);
+        const countdownContainer = document.querySelector(
+          ".hero-section .flex.space-x-4"
+        );
+        if (countdownContainer) {
+          countdownContainer.innerHTML =
+            '<span class="text-3xl font-garamond text-shadow-light">We are Married!</span>';
+        }
+      }
+    }, 1000);
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobile-menu");
+      const overlay = document.getElementById("mobile-menu-overlay");
+      menu.classList.toggle("open");
+      overlay.style.display = menu.classList.contains("open")
+        ? "block"
+        : "none";
+    }
+
+    // Hide mobile menu when clicking outside
+    document
+      .getElementById("mobile-menu-overlay")
+      .addEventListener("click", toggleMobileMenu);
+
+    // Smooth scroll and active nav link highlighting
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section[id]");
+
+      function highlightNavLink() {
+        let current = "";
+        const scrollY = window.pageYOffset;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("font-bold", "text-dusty-pink");
+          if (link.getAttribute("href").includes(current)) {
+            link.classList.add("font-bold", "text-dusty-pink");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightNavLink);
+      highlightNavLink();
+    });
+
+    // Seamless Marquee Fix
+    window.addEventListener("load", () => {
+      const track = document.getElementById("marquee-track");
+      const halfWidth = track.scrollWidth / 2;
+      track.style.setProperty("--scroll-width", `-${halfWidth}px`);
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Splide("#image-slider", {
+      type: "loop",
+      drag: false,
+      arrows: true,
+      pagination: false,
+      autoScroll: {
+        speed: 0.2, // adjust speed
+        pauseOnHover: true,
+        pauseOnFocus: false,
+      },
+    }).mount({ AutoScroll: window.splide.Extensions.AutoScroll });
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+      touchNavigation: true,
+      loop: true,
+      zoomable: false,
+    });
+  });
+  function setActiveNavLink() {
+    const currentHash = window.location.hash;
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+      // Remove active class from all links first
+      link.classList.remove("underline-active");
+
+      // Check if the link's href matches the current hash
+      if (link.getAttribute("href") === currentHash) {
+        link.classList.add("underline-active");
+      }
+    });
+
+    // Also handle the initial load case where no hash is present, but we might want #home to be active
+    if (currentHash === "" && document.querySelector('a[href="#home"]')) {
+      document
+        .querySelector('a[href="#home"]')
+        .classList.add("underline-active");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", setActiveNavLink);
+
+  window.addEventListener("hashchange", setActiveNavLink);
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Remove underline from all
+        navLinks.forEach((l) => l.classList.remove("underline-active"));
+
+        // Add underline to clicked one
+        link.classList.add("underline-active");
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section"); // sections need IDs
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // Function to remove active class
+    function removeActiveClasses() {
+      navLinks.forEach((link) => link.classList.remove("underline-active"));
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            const activeLink = document.querySelector(
+              `.nav-link[href="#${id}"]`
+            );
+
+            if (activeLink) {
+              removeActiveClasses();
+              activeLink.classList.add("underline-active");
+            }
+          }
+        });
+      },
+      {
+        root: null, // viewport
+        rootMargin: "0px",
+        threshold: 0.6, // 60% of section in view
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+
 </html>
