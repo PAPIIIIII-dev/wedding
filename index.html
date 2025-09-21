@@ -170,7 +170,7 @@
   <!-- Welcome Message / Invitation -->
   <section id="welcome" class="py-10 bg-light-beige text-center">
     <div class="container mx-auto px-4">
-      <h2 class="font-garamond text-4xl mb-6 text-dusty-pink">
+      <h2 class="font-garamond text-5xl mb-6 text-dusty-pink">
         Dear Friends and Family!
       </h2>
       <p class="max-w-7xl mx-auto text-lg leading-relaxed text-dusty-pink mb-8">
@@ -268,7 +268,7 @@
   <!-- Our Story -->
   <section id="story" class="py-10 bg-sage-green text-center scroll-mt-20">
     <div class="container mx-auto px-4">
-      <h2 class="font-garamond text-4xl mb-10 text-light-beige">
+      <h2 class="font-garamond text-5xl mb-10 text-light-beige">
         Our Journey
       </h2>
       <p class="max-w-3xl mx-auto text-lg leading-relaxed text-light-beige mb-8">
@@ -289,7 +289,7 @@
   <section id="location" class="py-10 bg-light-beige text-center scroll-mt-20">
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="text-center mb-16">
-        <h2 class="font-garamond text-4xl text-dusty-pink mb-4">Location</h2>
+        <h2 class="font-garamond text-5xl text-dusty-pink mb-4">Location</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-12">
         <div class="text-center">
@@ -353,7 +353,7 @@
   <section id="dress-code" class="py-10 px-4 scroll-mt-20" style="background-color: var(--color-light-beige)">
     <div class="container mx-auto text-center">
       <div class="mb-12">
-        <h2 class="font-garamond text-4xl text-balance mb-4" style="color: var(--color-dusty-pink)">
+        <h2 class="font-garamond text-5xl text-balance mb-4" style="color: var(--color-dusty-pink)">
           Dress Code & Color Palette
         </h2>
       </div>
@@ -424,7 +424,7 @@
     <div class="container mx-auto max-w-4xl">
       <div class="floral-border text-center mb-16">
         <div class="mb-5">
-          <h2 class="font-garamond text-4xl text-balance mb-4" style="color: var(--color-dusty-pink)">
+          <h2 class="font-garamond text-5xl text-balance mb-4" style="color: var(--color-dusty-pink)">
             The special day
           </h2>
         </div>
@@ -622,6 +622,142 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-light-beige text-center">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="font-garamond text-5xl md:text-5xl text-balance mb-4" style="color: var(--color-dusty-pink);">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+        Find answers to common questions about our wedding day. Click on any question to reveal the answer.
+      </p>
+
+      <!-- FAQ Card Container -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-h-96 overflow-y-auto border border-gray-100">
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">Will there be parking available at the venues?</span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              Yes! Both the church and reception offer complimentary parking, though spaces are limited.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">Can I bring a plus-one?</span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              We're having a small, intimate celebration with our closest loved ones. If your invitation or e-vite
+              includes a plus one, we'd be delighted for them to join us.
+            </div>
+          </div>
+        </div>
+
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">Are children welcome at the wedding?</span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              We truly love your little ones! However, to keep our celebration intimate and enjoyable for everyone,
+              we’re limiting attendance to children who are part of the wedding party or specifically included on your
+              invitation.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">What time should I arrive?</span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              The ceremony will begin promptly at 2 PM, so we kindly recommend arriving at the church at least 15
+              minutes early to get settled.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">Can I take photos during the ceremony?</span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              We kindly ask that you keep phones and cameras tucked away during the ceremony to help maintain a sacred
+              and intimate atmosphere. Our professional photographer will be there to capture all the special moments,
+              which we’ll be excited to share with you later!
+
+              Once we move to the reception, feel free to take as many photos as you’d like and capture all the fun
+              memories!
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">What if I already RSVP’d “yes” but can’t attend?
+            </span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              No worries! Just let us know as soon as possible so we can update our plans. We completely understand
+              that things come up. You can also update your response directly through the RSVP section on this
+              website.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item border-b border-gray-100 last:border-b-0">
+          <button
+            class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+            onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-800 pr-4">What if I already RSVP’d “no” but can now attend?
+            </span>
+            <span class="faq-icon text-2xl text-dusty-pink transition-transform duration-300">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed">
+              No problem at all! Just update your response in the RSVP section on this website, or let us know directly
+              so we can make the necessary arrangements. We’d be so happy to celebrate with you!
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
   <!-- RSVP Section -->
   <section id="rsvp" class="py-20 bg-light-beige text-center">
     <div class="container mx-auto px-4">
@@ -787,6 +923,35 @@
         </svg>
       </button>
     `;
+    }
+
+    function toggleFAQ(button) {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          const otherAnswer = item.querySelector('.faq-answer');
+          const otherIcon = item.querySelector('.faq-icon');
+          otherAnswer.style.maxHeight = '0px';
+          otherIcon.textContent = '+';
+          otherIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current FAQ item
+      if (isOpen) {
+        answer.style.maxHeight = '0px';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+      }
     }
   </script>
   <script>
