@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julie & Ezra - Our Wedding</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Flip: make "sage-green" point to dusty-pink
+              "sage-green": "var(--color-dusty-pink)",
+              "muted-dark-green": "var(--color-old-rose)",
+              "cadmium-green": "var(--color-rosegold)",
+
+              // Make pinks point to greens (so you can still use them as accents)
+              "dusty-pink": "var(--color-sage-green)",
+              "old-rose": "var(--color-muted-dark-green)",
+              rosegold: "var(--color-cadmium-green)",
+
+              // Keep neutrals the same
+              "light-beige": "var(--color-light-beige)",
+              "dark-text": "var(--color-dark-text)",
+              "light-text": "var(--color-light-text)",
+            },
+            fontFamily: {
+              garamond: ["Didot", "serif"],
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header
+      class="navbar bg-opacity-95 shadow-lg fixed py-3 w-full top-0 z-50"
+      style="background-color: #f8e8ea"
+    >
+      <nav class="container mx-auto flex justify-between items-center px-4">
+        <!-- Logo -->
+        <a
+          href="index.html#home"
+          class="font-garamond text-3xl text-white tracking-wide"
+          ><img src="./mono.png" width="50"
+        /></a>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 mx-auto">
+          <li>
+            <a
+              href="index.html#home"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#gallery"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#story"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Our Story</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#location"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Location</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#dress-code"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Dress Code</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#schedule"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >Schedule</a
+            >
+          </li>
+          <li>
+            <a
+              href="faq.html"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html#rsvp"
+              class="nav-link text-sm text-dusty-pink hover:underline font-normal"
+              >RSVP</a
+            >
+          </li>
+        </ul>
+
+        <!-- Details Button & Hamburger -->
+        <div class="flex items-center space-x-4">
+          <a
+            href="index.html#location"
+            class="hidden md:block py-1.5 px-5 border border-dusty-pink rounded-full text-sm text-dusty-pink font-garamond tracking-normal hover:bg-dusty-pink hover:text-white transition-all duration-300"
+            >Details</a
+          >
+          <button
+            class="md:hidden text-white text-3xl focus:outline-none"
+            onclick="toggleMobileMenu()"
+          >
+            &#9776;
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 mt-20 bg-light-beige text-center">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2
+          class="font-garamond text-5xl md:text-5xl text-balance mb-4"
+          style="color: var(--color-dusty-pink)"
+        >
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+          Find answers to common questions about our wedding day. Click on any
+          question to reveal the answer.
+        </p>
+
+        <!-- FAQ Card Container -->
+        <div
+          class="bg-white rounded-2xl shadow-xl overflow-hidden max-h-96 overflow-y-auto border border-gray-100"
+        >
+          <!-- FAQ Item 2 -->
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >Will there be parking available at the venues?</span
+              >
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                Yes! The church has limited parking available. The reception
+                venue also has limited parking and there are paid parking
+                options nearby, and venue staff will be happy to assist you with
+                directions to these alternatives.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >Can I bring a plus-one?</span
+              >
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                We're having a small, intimate celebration with our closest
+                loved ones. If your invitation or e-vite includes a plus one,
+                we'd be delighted for them to join us.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >Are children welcome at the wedding?</span
+              >
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                We truly love your little ones! However, to keep our celebration
+                intimate and enjoyable for everyone, we’re limiting attendance
+                to children who are part of the wedding party or specifically
+                included on your invitation.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >What time should I arrive?</span
+              >
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                The ceremony will begin promptly at 2 PM, so we kindly recommend
+                arriving at the church at least 15 minutes early to get settled.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 8 -->
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >Can I take photos during the ceremony?</span
+              >
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                We kindly ask that you keep phones and cameras tucked away
+                during the ceremony to help maintain a sacred and intimate
+                atmosphere. Our professional photographer will be there to
+                capture all the special moments, which we’ll be excited to share
+                with you later! Once we move to the reception, feel free to take
+                as many photos as you’d like and capture all the fun memories!
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >What if I already accepted the invitation but can’t attend?
+              </span>
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                No worries! Just let us know as soon as possible so we can
+                update our plans. We completely understand that things come up.
+                You can also update your response directly through the RSVP
+                section on this website.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item border-b border-gray-100 last:border-b-0">
+            <button
+              class="faq-question w-full text-left px-6 py-5 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="font-semibold text-sage-green pr-4"
+                >What if I already declined the invitation but can now attend?
+              </span>
+              <span
+                class="faq-icon text-2xl text-dusty-pink transition-transform duration-300"
+                >+</span
+              >
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+            >
+              <div class="px-6 pb-5 text-dusty-pink leading-relaxed text-left">
+                No problem at all! Just update your response in the RSVP section
+                on this website, or let us know directly so we can make the
+                necessary arrangements. We’d be so happy to celebrate with you!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const API_URL =
+        "https://script.google.com/macros/s/AKfycby9gebn40clT27Woz1KU3DohfIooRcPpTtn03bMepAPyfScHDhqLwrb-k-aUo2T2QJfeQ/exec"; // replace
+      async function searchGuest() {
+        const input = document.getElementById("searchName").value.trim();
+        const btn = document.getElementById("searchBtn");
+        const btnText = document.getElementById("searchBtnText");
+        const spinner = document.getElementById("searchLoading");
+        const resultDiv = document.getElementById("searchResult");
+
+        if (!input) return;
+
+        // Set loading state
+        btn.disabled = true;
+        btnText.textContent = "Searching...";
+        spinner.classList.remove("hidden");
+
+        try {
+          const response = await fetch(
+            `${API_URL}?name=${encodeURIComponent(input)}`
+          );
+          const data = await response.json();
+
+          if (data.error) {
+            resultDiv.innerHTML =
+              "⚠️ There was a problem. Please try again later.";
+            return;
+          }
+
+          if (data.found) {
+            if (data.confirmed) {
+              // Already confirmed
+              resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">${data.name}, you have already confirmed ✅</p>
+    <button type="button" onclick="resetSearch()" 
+      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+      Search Again
+    </button>
+  </div>
+`;
+            } else {
+              // Show confirm button
+              resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">Found: <b>${data.name}</b></p>
+    <button type="button" onclick="confirmAttendance('${data.name}')"
+      class="w-full md:w-auto py-3 px-8 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300">
+      Confirm Attendance
+    </button>
+    <button type="button" onclick="resetSearch()" 
+      class="mt-4 py-2 px-4 bg-gray-300 text-dusty-pink rounded-full hover:bg-gray-400">
+      Try Again
+    </button>
+  </div>
+`;
+            }
+          } else {
+            // Name not found
+            resultDiv.innerHTML = `
+  <div class="container mx-auto px-4 text-center flex flex-col items-center">
+    <p class="mb-4">❌ Name not found. Please try again.</p>
+    <button type="button" onclick="resetSearch()" 
+      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+      Try Again
+    </button>
+  </div>
+`;
+          }
+        } catch (err) {
+          console.error(err);
+          resultDiv.innerHTML = "⚠️ Error: Unable to connect.";
+        } finally {
+          // Reset button state
+          btn.disabled = false;
+          btnText.textContent = "Search RSVP";
+          spinner.classList.add("hidden");
+        }
+      }
+
+      async function confirmAttendance(name) {
+        const resultDiv = document.getElementById("searchResult");
+        resultDiv.innerHTML = "Saving your RSVP...";
+
+        try {
+          const res = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `name=${encodeURIComponent(name)}`,
+          });
+          const data = await res.json();
+
+          if (data.success) {
+            resultDiv.innerHTML = `
+          <div class="container mx-auto px-4">
+          <p class="mb-4">${name}, thank you for confirming! ✅</p>
+          <button type="button" onclick="resetSearch()" 
+            class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+            Search Again
+          </button>
+          </div>
+        `;
+          } else {
+            resultDiv.innerHTML = "⚠️ Could not update your RSVP.";
+          }
+        } catch (err) {
+          console.error(err);
+          resultDiv.innerHTML = "⚠️ Network error while confirming.";
+        }
+      }
+
+      function resetSearch() {
+        const resultDiv = document.getElementById("searchResult");
+        resultDiv.innerHTML = `
+      <div class="mb-6">
+        <label for="searchName" class="block text-gray-700 text-lg font-medium mb-2">
+          Your Name(s):
+        </label>
+        <input type="text" id="searchName" name="name"
+          placeholder="e.g., Imelda & Irene " required
+          class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-dusty-pink" />
+      </div>
+      <button id="searchBtn" type="submit"
+        class="w-full py-4 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300 flex items-center justify-center">
+        <span id="searchBtnText">Search RSVP</span>
+        <svg id="searchLoading" class="animate-spin ml-2 h-5 w-5 text-light-beige hidden"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10"
+            stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+        </svg>
+      </button>
+    `;
+      }
+
+      function toggleFAQ(button) {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+        const icon = button.querySelector(".faq-icon");
+        const isOpen =
+          answer.style.maxHeight && answer.style.maxHeight !== "0px";
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          if (item !== faqItem) {
+            const otherAnswer = item.querySelector(".faq-answer");
+            const otherIcon = item.querySelector(".faq-icon");
+            otherAnswer.style.maxHeight = "0px";
+            otherIcon.textContent = "+";
+            otherIcon.style.transform = "rotate(0deg)";
+          }
+        });
+
+        // Toggle current FAQ item
+        if (isOpen) {
+          answer.style.maxHeight = "0px";
+          icon.textContent = "+";
+          icon.style.transform = "rotate(0deg)";
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          icon.textContent = "−";
+          icon.style.transform = "rotate(180deg)";
+        }
+      }
+    </script>
+    <script>
+      // Countdown Timer Logic
+      const weddingDate = new Date("January 3, 2026 15:00:00").getTime();
+
+      const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").innerHTML = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").innerHTML = String(minutes).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerHTML = String(seconds).padStart(
+          2,
+          "0"
+        );
+
+        if (distance < 0) {
+          clearInterval(x);
+          const countdownContainer = document.querySelector(
+            ".hero-section .flex.space-x-4"
+          );
+          if (countdownContainer) {
+            countdownContainer.innerHTML =
+              '<span class="text-3xl font-garamond text-shadow-light">We are Married!</span>';
+          }
+        }
+      }, 1000);
+
+      // Mobile Menu Toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const overlay = document.getElementById("mobile-menu-overlay");
+        menu.classList.toggle("open");
+        overlay.style.display = menu.classList.contains("open")
+          ? "block"
+          : "none";
+      }
+
+      // Hide mobile menu when clicking outside
+      document
+        .getElementById("mobile-menu-overlay")
+        .addEventListener("click", toggleMobileMenu);
+
+      // Smooth scroll and active nav link highlighting
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("section[id]");
+
+        function highlightNavLink() {
+          let current = "";
+          const scrollY = window.pageYOffset;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            link.classList.remove("font-bold", "text-dusty-pink");
+            if (link.getAttribute("href").includes(current)) {
+              link.classList.add("font-bold", "text-dusty-pink");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightNavLink);
+        highlightNavLink();
+      });
+
+      // Seamless Marquee Fix
+      window.addEventListener("load", () => {
+        const track = document.getElementById("marquee-track");
+        const halfWidth = track.scrollWidth / 2;
+        track.style.setProperty("--scroll-width", `-${halfWidth}px`);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Splide("#image-slider", {
+        type: "loop",
+        drag: false,
+        arrows: true,
+        pagination: false,
+        autoScroll: {
+          speed: 0.2, // adjust speed
+          pauseOnHover: true,
+          pauseOnFocus: false,
+        },
+      }).mount({ AutoScroll: window.splide.Extensions.AutoScroll });
+      const lightbox = GLightbox({
+        selector: ".glightbox",
+        touchNavigation: true,
+        loop: true,
+        zoomable: false,
+      });
+    });
+    function setActiveNavLink() {
+      const currentHash = window.location.hash;
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        // Remove active class from all links first
+        link.classList.remove("underline-active");
+
+        // Check if the link's href matches the current hash
+        if (link.getAttribute("href") === currentHash) {
+          link.classList.add("underline-active");
+        }
+      });
+
+      // Also handle the initial load case where no hash is present, but we might want #home to be active
+      if (currentHash === "" && document.querySelector('a[href="#home"]')) {
+        document
+          .querySelector('a[href="#home"]')
+          .classList.add("underline-active");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", setActiveNavLink);
+
+    window.addEventListener("hashchange", setActiveNavLink);
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          // Remove underline from all
+          navLinks.forEach((l) => l.classList.remove("underline-active"));
+
+          // Add underline to clicked one
+          link.classList.add("underline-active");
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section"); // sections need IDs
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      // Function to remove active class
+      function removeActiveClasses() {
+        navLinks.forEach((link) => link.classList.remove("underline-active"));
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              const activeLink = document.querySelector(
+                `.nav-link[href="#${id}"]`
+              );
+
+              if (activeLink) {
+                removeActiveClasses();
+                activeLink.classList.add("underline-active");
+              }
+            }
+          });
+        },
+        {
+          root: null, // viewport
+          rootMargin: "0px",
+          threshold: 0.6, // 60% of section in view
+        }
+      );
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</html>
