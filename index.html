@@ -661,7 +661,7 @@
         reply is requested on or before <b>November 30, 2025</b>
       </p>
 
-      <form id="rsvpForm" class="max-w-xl mx-auto p-0 text-left" onsubmit="event.preventDefault(); searchGuest();">
+      <form id="rsvpForm" class="max-w-3xl mx-auto p-0 text-left" onsubmit="event.preventDefault(); searchGuest();">
         <div id="searchResult" class="mt-6 text-lg font-medium text-dusty-pink">
           <!-- Initial Search Form -->
           <div class="mb-6">
@@ -712,43 +712,43 @@
           data.matches.length > 1 ? "es" : ""
         }:</p>`;
 
-        let gridClass =
-        data.matches.length === 1
-          ? "grid grid-cols-1 place-items-center" // single item centered
-          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center";
+       let gridClass =
+  data.matches.length === 1
+    ? "grid grid-cols-1 justify-items-center" // single item centered
+    : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center items-start";
 
-        html += `<div class="${gridClass}">`;
+html += `<div class="${gridClass}">`;
 
-        data.matches.forEach((guest) => {
-          html += `
-            <div class="p-4 border rounded-lg bg-light-beige text-center flex flex-col justify-around w-full max-w-sm">
-              <p class="mb-3"><b>${guest.name}</b></p>
-              ${
-                guest.confirmed
-                  ? `
-                    <p class="mb-3">Already responded: <b>${guest.response}</b></p>
-                    <button type="button" onclick="updateResponse('${guest.name}')"
-                      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
-                      Update Response
-                    </button>
-                  `
-                  : `
-                  <div class='flex justify-center gap-2'>
-                    <button type="button" onclick="confirmAttendance('${guest.name}', 'Yes')"
-                      class="py-2 px-6 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
-                      Accept
-                    </button>
-                    <button type="button" onclick="confirmAttendance('${guest.name}', 'No')"
-                      class="py-2 px-6 bg-dusty-pink text-white rounded-full">
-                      Decline
-                    </button>
-                  </div>
-                  `
-              }
-            </div>`;
-        });
+data.matches.forEach((guest) => {
+  html += `
+    <div class="guest-card w-full max-w-sm p-4 border rounded-lg bg-light-beige text-center flex flex-col justify-around">
+      <p class="mb-3"><b>${guest.name}</b></p>
+      ${
+        guest.confirmed
+          ? `
+              <p class="mb-3">Already responded: <b>${guest.response}</b></p>
+              <button type="button" onclick="updateResponse('${guest.name}')"
+                class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+                Update Response
+              </button>
+            `
+          : `
+              <div class='flex justify-center gap-2'>
+                <button type="button" onclick="confirmAttendance('${guest.name}', 'Yes')"
+                  class="py-2 px-6 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+                  Accept
+                </button>
+                <button type="button" onclick="confirmAttendance('${guest.name}', 'No')"
+                  class="py-2 px-6 bg-dusty-pink text-white rounded-full">
+                  Decline
+                </button>
+              </div>
+            `
+      }
+    </div>`;
+});
 
-        html += `</div>`; // close grid
+html += `</div>`;
 
         html += `
           <button type="button" onclick="resetSearch()" 
