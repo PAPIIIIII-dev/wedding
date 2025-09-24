@@ -682,128 +682,167 @@
       </form>
     </div>
   </section>
-  <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycby9gebn40clT27Woz1KU3DohfIooRcPpTtn03bMepAPyfScHDhqLwrb-k-aUo2T2QJfeQ/exec"; // replace
-    async function searchGuest() {
-      const input = document.getElementById("searchName").value.trim();
-      const btn = document.getElementById("searchBtn");
-      const btnText = document.getElementById("searchBtnText");
-      const spinner = document.getElementById("searchLoading");
-      const resultDiv = document.getElementById("searchResult");
+  
+<script>
+  const API_URL =
+    "https://script.google.com/macros/s/AKfycbwm83acEm0R0c5ahC1uQUVJAFimZcV8CIl6sQBJYhEc03qn0NF-HtBT_yGBx-os3EdP2g/exec"; // replace with your endpoint
 
-      if (!input) return;
+  async function searchGuest() {
+    const input = document.getElementById("searchName").value.trim();
+    const btn = document.getElementById("searchBtn");
+    const btnText = document.getElementById("searchBtnText");
+    const spinner = document.getElementById("searchLoading");
+    const resultDiv = document.getElementById("searchResult");
 
-      // Set loading state
-      btn.disabled = true;
-      btnText.textContent = "Searching...";
-      spinner.classList.remove("hidden");
+    if (!input) return;
 
-      try {
-        const response = await fetch(`${API_URL}?name=${encodeURIComponent(input)}`);
-        const data = await response.json();
+    btn.disabled = true;
+    btnText.textContent = "Searching...";
+    spinner.classList.remove("hidden");
 
-        if (data.error) {
-          resultDiv.innerHTML =
-            "⚠️ There was a problem. Please try again later.";
-          return;
-        }
+    try {
+      const response = await fetch(
+        `${API_URL}?name=${encodeURIComponent(input)}`
+      );
+      const data = await response.json();
 
-        if (data.found) {
-          if (data.confirmed) {
-            // Already confirmed
-            resultDiv.innerHTML = `
-  <div class="container mx-auto px-4 text-center flex flex-col items-center">
-    <p class="mb-4">${data.name}, you have already confirmed ✅</p>
-    <button type="button" onclick="resetSearch()" 
-      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
-      Search Again
-    </button>
-  </div>
-`;
-          } else {
-            // Show confirm button
-            resultDiv.innerHTML = `
-  <div class="container mx-auto px-4 text-center flex flex-col items-center">
-    <p class="mb-4">Found: <b>${data.name}</b></p>
-    <button type="button" onclick="confirmAttendance('${data.name}')"
-      class="w-full md:w-auto py-3 px-8 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300">
-      Confirm Attendance
-    </button>
-    <button type="button" onclick="resetSearch()" 
-      class="mt-4 py-2 px-4 bg-gray-300 text-dusty-pink rounded-full hover:bg-gray-400">
-      Try Again
-    </button>
-  </div>
-`;
-          }
-        } else {
-          // Name not found
-          resultDiv.innerHTML = `
-  <div class="container mx-auto px-4 text-center flex flex-col items-center">
-    <p class="mb-4">❌ Name not found. Please try again.</p>
-    <button type="button" onclick="resetSearch()" 
-      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
-      Try Again
-    </button>
-  </div>
-`;
-        }
-      } catch (err) {
-        console.error(err);
-        resultDiv.innerHTML = "⚠️ Error: Unable to connect.";
-      } finally {
-        // Reset button state
-        btn.disabled = false;
-        btnText.textContent = "Search RSVP";
-        spinner.classList.add("hidden");
-      }
-    }
+      if (data.matches && data.matches.length > 0) {
+        let html = `<div class="container mx-auto px-4 text-center">`;
+        html += `<p class="font-medium mb-4">We found ${data.matches.length} match${
+          data.matches.length > 1 ? "es" : ""
+        }:</p>`;
 
-    async function confirmAttendance(name) {
-      const resultDiv = document.getElementById("searchResult");
-      resultDiv.innerHTML = "Saving your RSVP...";
+        let gridClass =
+        data.matches.length === 1
+          ? "grid grid-cols-1 place-items-center" // single item centered
+          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center";
 
-      try {
-        const res = await fetch(API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: `name=${encodeURIComponent(name)}`,
+        html += `<div class="${gridClass}">`;
+
+        data.matches.forEach((guest) => {
+          html += `
+            <div class="p-4 border rounded-lg bg-light-beige text-center flex flex-col justify-around w-full max-w-sm">
+              <p class="mb-3"><b>${guest.name}</b></p>
+              ${
+                guest.confirmed
+                  ? `
+                    <p class="mb-3">Already responded: <b>${guest.response}</b></p>
+                    <button type="button" onclick="updateResponse('${guest.name}')"
+                      class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+                      Update Response
+                    </button>
+                  `
+                  : `
+                  <div class='flex justify-center gap-2'>
+                    <button type="button" onclick="confirmAttendance('${guest.name}', 'Yes')"
+                      class="py-2 px-6 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+                      Accept
+                    </button>
+                    <button type="button" onclick="confirmAttendance('${guest.name}', 'No')"
+                      class="py-2 px-6 bg-dusty-pink text-white rounded-full">
+                      Decline
+                    </button>
+                  </div>
+                  `
+              }
+            </div>`;
         });
-        const data = await res.json();
 
-        if (data.success) {
-          resultDiv.innerHTML = `
-          <div class="container mx-auto px-4">
-          <p class="mb-4">${name}, thank you for confirming! ✅</p>
+        html += `</div>`; // close grid
+
+        html += `
           <button type="button" onclick="resetSearch()" 
-            class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+            class="mt-6 py-2 px-4 bg-sage-green text-white rounded-full">
             Search Again
           </button>
-          </div>
-        `;
-        } else {
-          resultDiv.innerHTML = "⚠️ Could not update your RSVP.";
-        }
-      } catch (err) {
-        console.error(err);
-        resultDiv.innerHTML = "⚠️ Network error while confirming.";
+        </div>`;
+        resultDiv.innerHTML = html;
+      } else {
+        resultDiv.innerHTML = `
+          <div class="container mx-auto px-4 text-center flex flex-col items-center">
+            <p class="mb-4">Name not found. Please try again.</p>
+            <button type="button" onclick="resetSearch()" 
+              class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+              Try Again
+            </button>
+          </div>`;
       }
+    } catch (err) {
+      console.error(err);
+      resultDiv.innerHTML = "Error: Unable to connect.";
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = "Search RSVP";
+      spinner.classList.add("hidden");
     }
+  }
 
-    function resetSearch() {
-      const resultDiv = document.getElementById("searchResult");
-      resultDiv.innerHTML = `
+  async function confirmAttendance(name, response) {
+    const resultDiv = document.getElementById("searchResult");
+    resultDiv.className += 'text-center'
+    resultDiv.innerHTML = "<div class='full-width text-center'>Saving your RSVP...<div/>";
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&response=${encodeURIComponent(
+          response
+        )}`,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        resultDiv.innerHTML = `
+          <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">${name}, your response has been saved: <b>${response}</b></p>
+            <button type="button" onclick="resetSearch()" 
+              class="py-2 px-4 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+              Search Again
+            </button>
+          </div>`;
+      } else {
+        resultDiv.innerHTML = "Could not update your RSVP.";
+      }
+    } catch (err) {
+      console.error(err);
+      resultDiv.innerHTML = "Network error while confirming.";
+    }
+  }
+
+  function updateResponse(name) {
+    const resultDiv = document.getElementById("searchResult");
+    resultDiv.innerHTML = `
+      <div class="container mx-auto px-4 text-center">
+        <p class="mb-4"><b>${name}</b>, would you like to update your RSVP?</p>
+        <button type="button" onclick="confirmAttendance('${name}', 'Yes')"
+          class="w-full md:w-auto py-2 px-6 mx-2 bg-sage-green text-light-beige rounded-full hover:bg-muted-dark-green">
+          Accept
+        </button>
+        <button type="button" onclick="confirmAttendance('${name}', 'No')"
+          class="w-full md:w-auto py-2 px-6 mx-2 bg-dusty-pink text-white rounded-full">
+          Decline
+        </button>
+        <button type="button" onclick="resetSearch()" 
+          class="mt-6 py-2 px-4 bg-gray-300 bg-dusty-pink rounded-full hover:bg-gray-400">
+          Cancel
+        </button>
+      </div>
+    `;
+  }
+
+  function resetSearch() {
+    const resultDiv = document.getElementById("searchResult");
+    resultDiv.innerHTML = `
       <div class="mb-6">
         <label for="searchName" class="block text-gray-700 text-lg font-medium mb-2">
           Your Name(s):
         </label>
         <input type="text" id="searchName" name="name"
-          placeholder="e.g., Imelda & Irene " required
+          placeholder="e.g., Ezra Paz & Julie Paz " required
           class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-dusty-pink bg-transparent text-dusty-pink" />
       </div>
-      <button id="searchBtn" type="submit"
+      <button id="searchBtn" type="button" onclick="searchGuest()"
         class="w-full py-4 bg-sage-green text-light-beige font-semibold text-lg uppercase rounded-full hover:bg-muted-dark-green transition-all duration-300 flex items-center justify-center">
         <span id="searchBtnText">Search RSVP</span>
         <svg id="searchLoading" class="animate-spin ml-2 h-5 w-5 text-light-beige hidden"
@@ -815,37 +854,8 @@
         </svg>
       </button>
     `;
-    }
-
-    function toggleFAQ(button) {
-      const faqItem = button.parentElement;
-      const answer = faqItem.querySelector('.faq-answer');
-      const icon = button.querySelector('.faq-icon');
-      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
-
-      // Close all other FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-          const otherAnswer = item.querySelector('.faq-answer');
-          const otherIcon = item.querySelector('.faq-icon');
-          otherAnswer.style.maxHeight = '0px';
-          otherIcon.textContent = '+';
-          otherIcon.style.transform = 'rotate(0deg)';
-        }
-      });
-
-      // Toggle current FAQ item
-      if (isOpen) {
-        answer.style.maxHeight = '0px';
-        icon.textContent = '+';
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-      }
-    }
-  </script>
+  }
+</script>
   <script>
     // Countdown Timer Logic
     const weddingDate = new Date("January 3, 2026 15:00:00").getTime();
