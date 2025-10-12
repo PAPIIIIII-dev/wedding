@@ -69,9 +69,6 @@
           <a href="#location" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Location</a>
         </li>
         <li>
-          <a href="#gifts" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Gifts</a>
-        </li>
-        <li>
           <a href="#dress-code" class="nav-link text-sm text-dusty-pink hover:underline font-normal">Dress Code</a>
         </li>
         <li>
@@ -178,7 +175,7 @@
       </div>
 
       <a href="#rsvp"
-        class="inline-block py-3 px-8 bg-sage-green hover:bg-opacity-90 text-white rounded-full font-semibold transition-all duration-300">RSVP</a>
+        class="inline-block py-3 px-8 bg-sage-green hover:bg-muted-dark-green text-white rounded-full font-semibold transition-all duration-300">RSVP</a>
     </div>
   </section>
 
@@ -480,8 +477,8 @@
     </div>
   </section>
 
-  <section id="gifts" class="py-16 px-4" style="background-color: #f8e8ea;">
-    <div class="flex flex-col mx-auto max-w-6xl">
+  <section id="gifts" class="py-16 px-4 scroll-mt-32" style="background-color: #f8e8ea;">
+    <div class="flex flex-col  mx-auto max-w-6xl">
       <!-- Heading -->
       <div class="text-center mb-3">
         <h2 class="font-garamond sm:text-xl text-5xl lg:text-5xl md:text-4xl mb-6 text-sage-green">
@@ -1122,7 +1119,7 @@
       const resultDiv = document.getElementById("searchResult");
       resultDiv.innerHTML = `
       <div class="mb-6">
-        <label for="searchName" class="block text-lg font-medium mb-2"> style="color: var(--color-sage-green)"
+        <label for="searchName" class="block text-lg font-medium mb-2" style="color: var(--color-sage-green)"> 
           Your Name(s):
         </label>
         <input type="text" id="searchName" name="name"
