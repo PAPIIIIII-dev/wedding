@@ -99,7 +99,7 @@ body {
 
 /* --- Hero Section Parallax --- */
 .hero-background {
-  background-image: url("../10.jpg"); /* Adjusted path */
+  background-image: url("../bg.jpg"); /* Adjusted path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
