@@ -116,7 +116,7 @@
   <section id="home"
     class="hero-section scroll-mt-20 hero-background flex items-center justify-center min-h-screen relative text-white text-center pt-20">
     <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-brightness-75"></div>
-    <div class="relative z-10 flex flex-col items-center">
+    <div class="relative z-10 flex flex-col items-center w-full px-4">
       <!-- Countdown Timer -->
       <div class="flex space-x-4 mb-8">
         <div class="text-shadow-light">
@@ -145,18 +145,15 @@
       </div>
 
       <!-- Couple's Names -->
-      <!-- <div class=""> -->
-      <!-- <img src="./mono.png" width="250" /> -->
-      <!-- </div> -->
       <h1
-        class="font-garamond text-7xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-7xl text-shadow-md text-sage-green mb-10">
+        class="font-garamond text-6xl lg:text-8xl md:text-8xl sm:text-6xl xs:text-6xl text-shadow-md text-sage-green mb-10">
         Julie & Ezra
       </h1>
 
       <!-- Date & Location Card -->
       <div
-        class="hero-details-card py-4 rounded-xl px-10 flex md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-sage-green">
-        <div class="text-center font-garamond text-sage-green content-end">
+        class="hero-details-card py-4 rounded-xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-sage-green mb-6 mx-auto">
+        <div class="text-center font-garamond text-sage-green md:w-40 flex-shrink-0">
           <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase">
             Saturday
           </p>
@@ -164,8 +161,10 @@
             January 3, 2026
           </p>
         </div>
-        <div class="border-l-2 border-sage-green h-22 mx-4"></div>
-        <div class="text-center font-garamond text-sage-green content-end">
+
+        <div class="hidden md:block border-l-2 border-sage-green h-12 flex-shrink-0"></div>
+
+        <div class="text-center font-garamond text-sage-green md:w-40 flex-shrink-0">
           <p class="text-xl md:text-lg sm:text-md xs:text-sm uppercase">
             3:00 PM
           </p>
@@ -176,7 +175,7 @@
       </div>
 
       <a href="#rsvp"
-            class="inline-block py-3 px-8 bg-sage-green hover:#f8e8ea text-white rounded-full font-semibold transition-all duration-300">RSVP</a>
+        class="inline-block py-3 px-8 bg-sage-green hover:bg-muted-dark-green text-white rounded-full font-semibold transition-all duration-300">RSVP</a>
     </div>
   </section>
 
@@ -210,21 +209,6 @@
       <div class="splide__track">
         <ul class="splide__list">
           <li class="splide__slide">
-            <a href="./16.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./16.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
-            <a href="./15.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./15.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
-            <a href="./14.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./14.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
             <a href="./1.jpg" class="glightbox" data-gallery="wedding-gallery">
               <img src="./1.jpg" />
             </a>
@@ -232,11 +216,6 @@
           <li class="splide__slide">
             <a href="./2.jpg" class="glightbox" data-gallery="wedding-gallery">
               <img src="./2.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
-            <a href="./17.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./17.jpg" />
             </a>
           </li>
           <li class="splide__slide">
@@ -260,11 +239,6 @@
             </a>
           </li>
           <li class="splide__slide">
-            <a href="./18.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./18.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
             <a href="./7.jpg" class="glightbox" data-gallery="wedding-gallery">
               <img src="./7.jpg" />
             </a>
@@ -285,11 +259,6 @@
             </a>
           </li>
           <li class="splide__slide">
-            <a href="./19.jpg" class="glightbox" data-gallery="wedding-gallery">
-              <img src="./19.jpg" />
-            </a>
-          </li>
-          <li class="splide__slide">
             <a href="./11.jpg" class="glightbox" data-gallery="wedding-gallery">
               <img src="./11.jpg" />
             </a>
@@ -302,6 +271,61 @@
           <li class="splide__slide">
             <a href="./13.jpg" class="glightbox" data-gallery="wedding-gallery">
               <img src="./13.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./14.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./14.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./15.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./15.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./16.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./16.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./17.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./17.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./18.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./18.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./19.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./19.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./20.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./20.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./21.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./21.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./22.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./22.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./23.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./23.jpg" />
+            </a>
+          </li>
+          <li class="splide__slide">
+            <a href="./24.jpg" class="glightbox" data-gallery="wedding-gallery">
+              <img src="./24.jpg" />
             </a>
           </li>
         </ul>
@@ -478,18 +502,22 @@
     </div>
   </section>
 
-  <section id="gifts" class="py-16 px-4" style="background-color: #f8e8ea;">
-    <div class="flex flex-col mx-auto max-w-6xl">
+  <section id="gifts" class="py-16 px-4 scroll-mt-32" style="background-color: #f8e8ea;">
+    <div class="flex flex-col  mx-auto max-w-6xl">
       <!-- Heading -->
       <div class="text-center mb-3">
         <h2 class="font-garamond sm:text-xl text-5xl lg:text-5xl md:text-4xl mb-6 text-sage-green">
           Gifts
         </h2>
 
-        <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12"
-          style="color: #333333; font-family: Georgia, serif;">
-          Your presence at our wedding is the greatest gift we could ask for. Should you wish to honor us with a gift, a
-          contribution towards our future together would be sincerely appreciated.
+        <p class="text-lg mb-6" style="color: var(--color-sage-green) max-w-2xl">
+          Your presence, love, and laughter on our wedding day are the greatest gifts we could ask for. However, should
+          you wish to bless us with a gift, a monetary gift would be deeply appreciated as we begin our journey
+          together.
+        </p>
+        <p class="text-lg mb-6" style="color: var(--color-sage-green) max-w-2xl">
+          Should you wish to send a monetary gift, we’ve provided these QR codes to make it easier. We're so thankful to
+          have you celebrating with us.
         </p>
       </div>
 
@@ -532,7 +560,7 @@
           </p>
         </div>
 
-                <div class="text-center"
+        <div class="text-center"
           style="background-color: white; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <h3 class="font-garamond text-2xl mb-4 text-dusty-pink">
             BDO
@@ -717,8 +745,9 @@
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="pb-4 text-dusty-pink leading-relaxed">
-              We’re so happy you can make it after all! Please update your response in the RSVP section on our website, 
-              or let us know directly so we can make the necessary arrangements. We may have already reallocated the seats 
+              We’re so happy you can make it after all! Please update your response in the RSVP section on our website,
+              or let us know directly so we can make the necessary arrangements. We may have already reallocated the
+              seats
               initially reserved for you, but we’ll do our best to fit you in. We’d be so happy to celebrate with you!
             </div>
           </div>
@@ -1119,7 +1148,7 @@
       const resultDiv = document.getElementById("searchResult");
       resultDiv.innerHTML = `
       <div class="mb-6">
-        <label for="searchName" class="block text-lg font-medium mb-2"> style="color: var(--color-sage-green)"
+        <label for="searchName" class="block text-lg font-medium mb-2" style="color: var(--color-sage-green)"> 
           Your Name(s):
         </label>
         <input type="text" id="searchName" name="name"
